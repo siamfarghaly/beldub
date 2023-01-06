@@ -39,9 +39,9 @@ const Layout = ({ children }) => {
             fontSize: `var(--font-sm)`,
           }}
         >
-          © {new Date().getFullYear()} &middot; Built with
+          Beldub © {new Date().getFullYear()} &middot; Built by
           {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
+          <a href="https://www.linkedin.com/in/siam-farghaly/">Siam Farghaly</a>
         </footer>
       </div>
     </>

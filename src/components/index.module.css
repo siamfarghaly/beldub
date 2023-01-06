@@ -18,20 +18,9 @@
 }
 
 .listItem::marker {
-  color: #e95800;
+  color: var(--color-yellow);
 }
 
-.listItem:nth-child(2)::marker {
-  color: #159bf3;
-}
-
-.listItem:nth-child(3)::marker {
-  color: #8eb814;
-}
-
-.listItem:nth-child(4)::marker {
-  color: #663399;
-}
 
 .listItemLink {
   color: var(--color-primary);
@@ -51,4 +40,9 @@
 .intro {
   max-width: none;
   line-height: var(--line-height-loose);
+}
+
+h1{
+  font-weight: 800;
+  margin-bottom: var(--space-4);
 }

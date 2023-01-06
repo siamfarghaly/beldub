@@ -9,12 +9,20 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    title: `Beldub`,
+    description: `BelDub created a platform that brings you reports of everything dubbing in Belgium. It's the sequel to a documentary on Belgian soundsystem culture.`,
+    author: `@beldub`,
+    siteUrl: `https://www.beldub.be/`,
   },
   plugins: [
+      {
+      resolve: `gatsby-source-strapi`,
+      options: {
+        apiURL: `https://beldub-api.fly.dev/`,
+        queryLimit: 1000, // Default to 100
+        collectionTypes: [`soundsystem`, `post`, `eventcalendar`],
+      },
+    },
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -26,6 +34,15 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `work sans:200,200i 400, 600, 800`,
+        ],
+        display: 'swap'
+      }
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `gatsby-starter-default`,
@@ -36,7 +53,7 @@ module.exports = {
         // https://css-tricks.com/meta-theme-color-and-trickery/
         // theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/logo-beldub.png`, // This path is relative to the root of the site.
       },
     },
   ],

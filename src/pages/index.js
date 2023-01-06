@@ -33,69 +33,63 @@ const links = [
   },
 ]
 
-const samplePageLinks = [
-  {
-    text: "Page 2",
-    url: "page-2",
-    badge: false,
-    description:
-      "A simple example of linking to another page within a Gatsby site",
-  },
-  { text: "TypeScript", url: "using-typescript" },
-  { text: "Server Side Rendering", url: "using-ssr" },
-  { text: "Deferred Static Generation", url: "using-dsg" },
-]
 
 const moreLinks = [
-  { text: "Join us on Discord", url: "https://gatsby.dev/discord" },
+  { text: "Youtube", url: "https://www.youtube.com/@beldub9678" },
   {
-    text: "Documentation",
-    url: "https://gatsbyjs.com/docs/",
+    text: "Instagram",
+    url: "https://www.instagram.com/beldub_/",
   },
   {
-    text: "Starters",
-    url: "https://gatsbyjs.com/starters/",
+    text: "Facebook",
+    url: "https://www.facebook.com/beldubdocu",
   },
   {
-    text: "Showcase",
-    url: "https://gatsbyjs.com/showcase/",
+    text: "Tiktok",
+    url: "https://www.tiktok.com/@beldub_",
   },
-  {
-    text: "Contributing",
-    url: "https://www.gatsbyjs.com/contributing/",
-  },
-  { text: "Issues", url: "https://github.com/gatsbyjs/gatsby/issues" },
 ]
 
 const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
 
 const IndexPage = () => (
   <Layout>
-    <div className={styles.textCenter}>
+    <div style={{background_color :'var(--color-blue', width:'100%'}}>
       <StaticImage
-        src="../images/example.png"
-        loading="eager"
-        width={64}
-        quality={95}
-        formats={["auto", "webp", "avif"]}
-        alt=""
-        style={{ marginBottom: `var(--space-3)` }}
+          src="../images/beldubcover.jpeg"
+          loading="eager"
+          quality={100}
+          formats={["auto", "webp", "avif"]}
+          alt=""
+          style={{ 
+            margin:'auto',
+            marginBottom: `var(--space-3)`,
+          }}
       />
-      <h1>
-        Welcome to <b>Gatsby!</b>
+    </div>
+    
+    <div className={styles.textCenter}>
+      <h1 style={{fontWeight:800}}>
+        Welcome to <b>Beldub.be!</b>
       </h1>
       <p className={styles.intro}>
-        <b>Example pages:</b>{" "}
-        {samplePageLinks.map((link, i) => (
-          <React.Fragment key={link.url}>
-            <Link to={link.url}>{link.text}</Link>
-            {i !== samplePageLinks.length - 1 && <> · </>}
-          </React.Fragment>
-        ))}
-        <br />
-        Edit <code>src/pages/index.js</code> to update this page.
+      We created a platform that brings you reports of everything dubbing in Belgium. It's the sequel to a documentary on Belgian soundsystem culture.
       </p>
     </div>
+    <a href={'https://vimeo.com/201431711'}>
+    <StaticImage
+        src="../images/promofoto-documentaire-beldub.jpeg"
+        loading="eager"
+        quality={100}
+        formats={["auto", "webp", "avif"]}
+        alt=""
+        style={{ 
+          margin:'auto',
+          marginBottom: `var(--space-3)`,
+         }}
+      />
+    </a>
+    
     <ul className={styles.list}>
       {links.map(link => (
         <li key={link.url} className={styles.listItem}>
