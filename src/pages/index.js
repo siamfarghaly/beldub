@@ -70,10 +70,10 @@ const IndexPage = () => (
     
     <div className={styles.textCenter}>
       <h1 style={{fontWeight:800}}>
-        Welcome to <b>Beldub.be!</b>
+        Welcome to <b>Beldub:</b>
       </h1>
       <p className={styles.intro}>
-      We created a platform that brings you reports of everything dubbing in Belgium. It's the sequel to a documentary on Belgian soundsystem culture.
+      the platform that brings you reports of everything dubbing in Belgium.
       </p>
     </div>
     <a href={'https://vimeo.com/201431711'}>
