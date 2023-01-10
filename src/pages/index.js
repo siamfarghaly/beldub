@@ -54,7 +54,7 @@ const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=de
 
 const IndexPage = () => (
   <Layout>
-    <div style={{background_color :'var(--color-blue', width:'100%'}}>
+    {/* <div style={{background_color :'var(--color-blue', width:'100%'}}>
       <StaticImage
           src="../images/beldubcover.jpeg"
           loading="eager"
@@ -66,7 +66,7 @@ const IndexPage = () => (
             marginBottom: `var(--space-3)`,
           }}
       />
-    </div>
+    </div> */}
     
     <div className={styles.textCenter}>
       <h1 style={{fontWeight:800}}>
