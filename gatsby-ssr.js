@@ -7,6 +7,19 @@
 /**
  * @type {import('gatsby').GatsbySSR['onRenderBody']}
  */
-exports.onRenderBody = ({ setHtmlAttributes }) => {
-  setHtmlAttributes({ lang: `en` })
+
+
+import * as React from "react"
+
+export const onRenderBody = ({ setHeadComponents }) => {
+  setHeadComponents([
+    <link
+      rel="preload"
+      href="/fonts/swiss-721-bold-condensed.woff"
+      as="font"
+      type="font/woff"
+      crossOrigin="anonymous"
+      key="beldub-font"
+    />,
+  ])
 }

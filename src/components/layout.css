@@ -7,12 +7,12 @@
   --color-primary: #90caa2;
   --color-yellow: #ffdb51;
   --color-blue: #547f8c;
-  --font-sans: Work sans, Helvetica, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial,
+  --font-sans: Swiss-721, Helvetica, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial,
     sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   --font-light: 200;
   --font-normal: 400;
   --font-bold: 600;
-  --font-heavy: 900;
+  --font-heavy: 800;
 
   --font-mono: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
     "Courier New", monospace;
