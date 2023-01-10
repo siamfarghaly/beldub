@@ -43,6 +43,6 @@
 }
 
 h1{
-  font-weight: var(--font-heavy);
+  font-weight: 800;
   margin-bottom: var(--space-4);
 }

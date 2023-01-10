@@ -47,7 +47,6 @@ body {
   -webkit-font-smoothing: antialiased;
   color: var(--color-text);
   font-family: var(--font-sans);
-  font-weight: normal;
   margin: 0;
   word-wrap: break-word;
 }
@@ -56,7 +55,7 @@ a {
   background-color: transparent;
   color: var(--color-primary);
   text-decoration: none;
-  font-weight: 500;
+  font-weight: var(--font-medium);
   text-decoration: underline;
   text-decoration-thickness: 1.5px;
   text-underline-offset: 2px;
@@ -74,7 +73,6 @@ abbr[title] {
 b,
 strong {
   font-weight: inherit;
-  font-weight: bolder;
 }
 dfn {
   font-style: italic;
@@ -85,9 +83,11 @@ h1 {
   padding: 0;
   line-height: var(--line-height-dense);
   letter-spacing: -0.01em;
+  font-weight: var(--font-heavy);
 }
 h1 > b {
   color: var(--color-primary);
+  font-weight: var(--font-heavy);
 }
 img {
   border-style: none;
@@ -134,7 +134,7 @@ p {
   margin: 0;
   padding: 0;
   margin-bottom: var(--space-4);
-  font-weight: var(--font-heavy);
+  font-weight: var(--font-medium);
 }
 ul,
 ol {
@@ -159,7 +159,7 @@ b,
 strong,
 dt,
 th {
-  font-weight: bold;
+  font-weight: var(--font-bold);
 }
 li {
   margin-bottom: calc(var(--space-4) / 2);

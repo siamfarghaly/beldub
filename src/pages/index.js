@@ -1,5 +1,4 @@
 import * as React from "react"
-import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
@@ -69,11 +68,11 @@ const IndexPage = () => (
     </div> */}
     
     <div className={styles.textCenter}>
-      <h1 style={{fontWeight:800}}>
-        Welcome to <b>Beldub:</b>
+      <h1 style={{textAlign:'left'}}>
+        <b>Beldub:</b> the platform that brings you reports of everything dubbing in Belgium.
       </h1>
       <p className={styles.intro}>
-      the platform that brings you reports of everything dubbing in Belgium.
+      
       </p>
     </div>
     <a href={'https://vimeo.com/201431711'}>
