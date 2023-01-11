@@ -31,7 +31,7 @@ const Header = ({ siteTitle }) => (
         </Link>
       
       <input id="menu-toggle" type="checkbox" />
-      <label className='menu-button-container' for="menu-toggle">
+      <label className='menu-button-container' htmlFor="menu-toggle">
         <div className='menu-button'></div>
       </label>
       <ul className="menu">
