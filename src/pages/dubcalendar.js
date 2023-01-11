@@ -6,7 +6,7 @@ import Seo from "../components/seo"
 
 const Dubcalendar = () => (
   <Layout>
-    <h1>Upcoming Reggae & Soundsystem <b>Events in Belgium</b></h1>
+    <h1>Upcoming Dub & Soundsystem <b>Events in Belgium</b></h1>
     <Link to="/">Go back to the homepage</Link>
   </Layout>
 )
