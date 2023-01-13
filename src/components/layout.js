@@ -40,7 +40,7 @@ const Layout = ({ children }) => {
             fontSize: `var(--font-sm)`,
           }}
         >
-          Beldub © {new Date().getFullYear()} &middot; Built by
+          Beldub © {new Date().getFullYear()} &middot; Site by
           {` `}
           <a href="https://www.linkedin.com/in/siam-farghaly/">Siam Farghaly</a>
         </footer>

@@ -42,7 +42,3 @@
   line-height: var(--line-height-loose);
 }
 
-h1{
-  font-weight: 800;
-  margin-bottom: var(--space-4);
-}

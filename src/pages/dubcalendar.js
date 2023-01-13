@@ -36,7 +36,6 @@ const Dubcalendar = () => {
       <div className="eventBox" style={{display:"grid",
   gridTemplateColumns: "repeat( auto-fit, minmax(300px, 1fr) )",
   gridGap:"30px",
-  padding:"0px 50px",
   marginTop:"30px"}}>
         {
           dubEvents.reverse().map((dubEvent, index) => {

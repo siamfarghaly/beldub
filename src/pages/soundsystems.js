@@ -60,7 +60,6 @@ const Soundsystems = () => {
       <div className="eventBox" style={{display:"grid",
   gridTemplateColumns: "repeat( auto-fit, minmax(215px, 1fr) )",
   gridGap:"30px",
-  padding:"0px 50px",
   marginTop:"30px"}}>
       {
           data.allStrapiSoundsystem.nodes.map((sound, index) => {
