@@ -57,6 +57,34 @@ const Soundsystems = () => {
         ))}
         
       </MapContainer>
+      <div className="eventBox" style={{display:"grid",
+  gridTemplateColumns: "repeat( auto-fit, minmax(215px, 1fr) )",
+  gridGap:"30px",
+  padding:"0px 50px",
+  marginTop:"30px"}}>
+      {
+          data.allStrapiSoundsystem.nodes.map((sound, index) => {
+            
+              return(
+                <div className="soundCard" key={index} style={{ backgroundColor:"white",
+                  color:"var(--color-black)",
+                  padding:"10px",
+                  borderRadius:"4px",
+                  boxShadow:"4px 6px 5px var(--color-blue)"}}>
+                  <a href={sound.slug} style={{textDecoration:"none"}}>
+                  <h3 className="soundName"style={{margin:"0", height:"80px"}}> <b>{sound.name}</b> </h3>
+                  <GatsbyImage image={getImage(sound.img.localFile.childImageSharp.gatsbyImageData)} alt={sound.slug} style={{height:"200px"}} />
+                  </a>
+                  <div style={{textAlign:"left"}}> {sound.city}<br/>
+                  {sound.year}</div>
+                  {/* <p>{dubEvent.DESCRIPTION}</p> */}
+                  
+                </div>
+              )
+            
+          })
+        }
+        </div>
     </Layout>
   )
 }
