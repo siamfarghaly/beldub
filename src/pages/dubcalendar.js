@@ -18,7 +18,6 @@ const Dubcalendar = () => {
   
   let json = JSON.parse(data.allStrapiEventcalendar.nodes[0].content);
   const dubEvents = json.VCALENDAR[0].VEVENT;
-  console.log(dubEvents);
   function formatDate(dateCode){
        let year        = dateCode.substring(0,4);
        let month       = dateCode.substring(4,6);
@@ -30,7 +29,6 @@ const Dubcalendar = () => {
        return dateString;
 
      }
-
   return(
     <Layout>
       <h1>Upcoming Dub & Soundsystem <b>Events in Belgium</b></h1>
@@ -38,6 +36,7 @@ const Dubcalendar = () => {
       <div className="eventBox">
         {
           dubEvents.reverse().map((dubEvent, index) => {
+            
               return(
                 <div className="eventCard" key={index}>
                   <h3 className="eventTitle"> {dubEvent.SUMMARY} </h3>
@@ -45,6 +44,7 @@ const Dubcalendar = () => {
                   <p> {dubEvent.LOCATION}</p>
                 </div>
               )
+            
           })
         }
       </div>    

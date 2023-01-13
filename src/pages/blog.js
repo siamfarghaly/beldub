@@ -45,7 +45,7 @@ const Blog = () => {
       <Link to="/">Go back to the homepage</Link>
         {data.allStrapiPost.nodes.map((blogpost, i) => (
          
-              <div style={{textAlign:'left'}}>
+              <div key={i} style={{textAlign:'left'}}>
                 <GatsbyImage image={getImage(blogpost.cover.localFile.childImageSharp.gatsbyImageData)} alt={blogpost.slug} />
                 <h1><b>{blogpost.title}</b></h1>
                 <p style={{fontWeight: "var(--font-medium)"}}>{blogpost.content.data.content}</p>
