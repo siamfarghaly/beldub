@@ -39,9 +39,12 @@ const Dubcalendar = () => {
             
               return(
                 <div className="eventCard" key={index}>
+                  <a href={dubEvent.URL}>
                   <h3 className="eventTitle"> {dubEvent.SUMMARY} </h3>
+                  </a>
                   <div> {formatDate(dubEvent.DTSTART)} </div>
                   <p> {dubEvent.LOCATION}</p>
+                  
                 </div>
               )
             
