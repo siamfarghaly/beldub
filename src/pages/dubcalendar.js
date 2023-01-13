@@ -33,17 +33,26 @@ const Dubcalendar = () => {
     <Layout>
       <h1>Upcoming Dub & Soundsystem <b>Events in Belgium</b></h1>
       <Link to="/">Go back to the homepage</Link>
-      <div className="eventBox">
+      <div className="eventBox" style={{display:"grid",
+  gridTemplateColumns: "repeat( auto-fit, minmax(300px, 1fr) )",
+  gridGap:"30px",
+  padding:"0px 50px",
+  marginTop:"30px"}}>
         {
           dubEvents.reverse().map((dubEvent, index) => {
             
               return(
-                <div className="eventCard" key={index}>
-                  <a href={dubEvent.URL}>
-                  <h3 className="eventTitle"> {dubEvent.SUMMARY} </h3>
+                <div className="eventCard" key={index} style={{ backgroundColor:"white",
+                  color:"var(--color-black)",
+                  padding:"10px",
+                  borderRadius:"4px",
+                  boxShadow:"4px 6px 5px var(--color-blue)"}}>
+                  <a href={dubEvent.URL} style={{textDecoration:"none"}}>
+                  <h3 className="eventTitle"style={{margin:"0", height:"80px"}}> <b>{dubEvent.SUMMARY}</b> </h3>
                   </a>
-                  <div> {formatDate(dubEvent.DTSTART)} </div>
-                  <p> {dubEvent.LOCATION}</p>
+                  <div style={{textAlign:"left"}}> {formatDate(dubEvent.DTSTART)}<br/>
+                  {dubEvent.LOCATION}</div>
+                  {/* <p>{dubEvent.DESCRIPTION}</p> */}
                   
                 </div>
               )
