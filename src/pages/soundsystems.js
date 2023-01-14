@@ -38,8 +38,8 @@ const Soundsystems = () => {
   return (
     <Layout>
       <h1>The <b>Belgian Reggae Soundsystem List</b></h1>
-      <Link to="/">Go back to the homepage</Link>
-      <MapContainer style={{ height: '400px' }} center={[50.70538598041358, 4.494414422841746]} zoom={7}>
+      <Link style={{marginBottom:'20px'}} to="/">Back Home</Link>
+      <MapContainer style={{ height: '400px'}} center={[50.70538598041358, 4.494414422841746]} zoom={7}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://api.maptiler.com/maps/basic-v2/{z}/{x}/{y}.png?key=TSXhCTpRTaXUw3cJHU0A"

@@ -42,15 +42,19 @@ const Blog = () => {
   return (
     <Layout>
       <h1>Latest <b>Videos, Articles & Interviews</b></h1>
-      <Link to="/">Go back to the homepage</Link>
+      <Link style={{marginBottom:'20px'}} to="/">Back Home</Link>
+      <div className="blogPosts" style={{display:"grid",
+  gridTemplateColumns: "repeat( auto-fit, minmax(300px, 1fr) )",
+  gridGap:"30px",
+  marginTop:"30px"}}>
         {data.allStrapiPost.nodes.map((blogpost, i) => (
          
               <div key={i} style={{textAlign:'left'}}>
                 <GatsbyImage image={getImage(blogpost.cover.localFile.childImageSharp.gatsbyImageData)} alt={blogpost.slug} />
-                <h1><b>{blogpost.title}</b></h1>
-                <p style={{fontWeight: "var(--font-medium)"}}>{blogpost.content.data.content}</p>
+                <h1 style={{marginTop:'var(--space-3)',marginBottom:'var(--space-2)'}}><b>{blogpost.title}</b></h1>
+                <p style={{fontWeight: "var(--font-medium)"}}>{blogpost.content.data.content.slice(0, 250)}...</p>
               </div>
-        ))} 
+        ))} </div>
     </Layout>
   )
 }

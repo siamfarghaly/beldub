@@ -26,6 +26,7 @@ const socials = [
 const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
 
 const IndexPage = () => (
+  
   <Layout>
     <div className="hero" style={{zIndex:'-100',position:'absolute',top:'250px', overflow:'hidden',left:'0', backgroundPosition:'90%',height:'50vh',width:'100vw',backgroundSize:'cover',backgroundRepeat:'no-repeat', backgroundImage:'url("../beldubcover.jpeg")'}}>
       

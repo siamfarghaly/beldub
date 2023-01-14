@@ -7,7 +7,7 @@ import Seo from "../components/seo"
 const About = () => (
   <Layout>
     <h1>About <b>Beldub</b></h1>
-    <Link to="/">Go back to the homepage</Link>
+    <Link style={{marginBottom:'20px'}} to="/">Back Home</Link>
   </Layout>
 )
 

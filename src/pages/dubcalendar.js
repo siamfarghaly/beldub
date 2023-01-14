@@ -32,7 +32,7 @@ const Dubcalendar = () => {
   return(
     <Layout>
       <h1>Upcoming Dub & Soundsystem <b>Events in Belgium</b></h1>
-      <Link to="/">Go back to the homepage</Link>
+      <Link style={{marginBottom:'20px'}} to="/">Back Home</Link>
       <div className="eventBox" style={{display:"grid",
   gridTemplateColumns: "repeat( auto-fit, minmax(300px, 1fr) )",
   gridGap:"30px",
