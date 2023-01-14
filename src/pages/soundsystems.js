@@ -39,7 +39,7 @@ const Soundsystems = () => {
     <Layout>
       <h1>The <b>Belgian Reggae Soundsystem List</b></h1>
       <Link style={{marginBottom:'20px'}} to="/">Back Home</Link>
-      <MapContainer style={{ height: '400px'}} center={[50.70538598041358, 4.494414422841746]} zoom={7}>
+      <MapContainer style={{ borderRadius:'4px', height: '400px'}} center={[50.70538598041358, 4.494414422841746]} zoom={7}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://api.maptiler.com/maps/basic-v2/{z}/{x}/{y}.png?key=TSXhCTpRTaXUw3cJHU0A"
@@ -65,17 +65,17 @@ const Soundsystems = () => {
           data.allStrapiSoundsystem.nodes.map((sound, index) => {
             
               return(
-                <div className="soundCard" key={index} style={{ backgroundColor:"white",
+                <div className="soundCard" key={index} style={{ height:'360px',backgroundColor:"white",
                   color:"var(--color-black)",
                   padding:"10px",
                   borderRadius:"4px",
                   boxShadow:"4px 6px 5px var(--color-blue)"}}>
                   <a href={sound.slug} style={{textDecoration:"none"}}>
-                  <h3 className="soundName"style={{margin:"0", height:"80px"}}> <b>{sound.name}</b> </h3>
-                  <GatsbyImage image={getImage(sound.img.localFile.childImageSharp.gatsbyImageData)} alt={sound.slug} style={{height:"200px"}} />
+                  <h2 className="soundName"style={{fontWeight:'var(--font-bold)',lineHeight:'var(--line-height-dense)', margin:'0',height:"70px",textAlign:'center'}}> <b>{sound.name}</b> </h2>
+                  <GatsbyImage image={getImage(sound.img.localFile.childImageSharp.gatsbyImageData)} alt={sound.slug} style={{marginTop:'0',height:'250px'}} />
                   </a>
-                  <div style={{textAlign:"left"}}> {sound.city}<br/>
-                  {sound.year}</div>
+                  <p style={{marginBottom:'0',textAlign:"left"}}>{sound.city} </p>
+                  <p style={{marginBottom:'0',marginTop:'-25px',textAlign:"right"}}>{sound.year}</p>
                   {/* <p>{dubEvent.DESCRIPTION}</p> */}
                   
                 </div>

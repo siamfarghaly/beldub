@@ -84,6 +84,7 @@ h1 {
   line-height: var(--line-height-dense);
   letter-spacing: -0.01em;
   font-weight: var(--font-heavy);
+  font-size: 2.5rem;
 }
 h1 > b {
   color: var(--color-primary);
