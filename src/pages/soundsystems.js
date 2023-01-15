@@ -3,18 +3,18 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import L from "leaflet"
-import mapIcon from "../images/mapIcon.svg";
+// import L from "leaflet"
+// import mapIcon from "../images/mapIcon.svg";
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
-let dubIcon = L.icon({
-  iconUrl: mapIcon,
-  iconRetinaUrl: mapIcon,
-  iconAnchor: [25, 25],
-  popupAnchor: [0, 0],
-  iconSize: [50, 50],
-});
+// let dubIcon = L.icon({
+//   iconUrl: mapIcon,
+//   iconRetinaUrl: mapIcon,
+//   iconAnchor: [25, 25],
+//   popupAnchor: [0, 0],
+//   iconSize: [50, 50],
+// });
 
 const Soundsystems = () => {
   
@@ -55,7 +55,7 @@ const Soundsystems = () => {
           url="https://api.maptiler.com/maps/basic-v2/{z}/{x}/{y}.png?key=TSXhCTpRTaXUw3cJHU0A"
         />
         {data.allStrapiSoundsystem.nodes.map((sound, i) => (
-          <Marker key={i} position={[sound.lat, sound.long]} icon={dubIcon}>
+          <Marker key={i} position={[sound.lat, sound.long]}>
             <Popup>
               <div style={{textAlign:'center'}}>
                 <GatsbyImage image={getImage(sound.img.localFile.childImageSharp.gatsbyImageData)} alt={sound.slug} />
