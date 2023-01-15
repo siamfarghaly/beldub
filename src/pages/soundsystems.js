@@ -3,18 +3,11 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-// import L from "leaflet"
-// import mapIcon from "../images/mapIcon.svg";
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
-// let dubIcon = L.icon({
-//   iconUrl: mapIcon,
-//   iconRetinaUrl: mapIcon,
-//   iconAnchor: [25, 25],
-//   popupAnchor: [0, 0],
-//   iconSize: [50, 50],
-// });
+
+
 
 const Soundsystems = () => {
   
@@ -45,6 +38,7 @@ const Soundsystems = () => {
   `)
 
   return (
+    
     <Layout>
       <h1>The <b>Belgian Reggae Soundsystem List</b></h1>
       <Link style={{marginBottom:'20px'}} to="/">Back Home</Link>
@@ -95,7 +89,7 @@ const Soundsystems = () => {
         }
         </div>
     </Layout>
-  )
+      )
   
 }
 
