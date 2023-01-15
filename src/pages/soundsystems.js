@@ -3,12 +3,21 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import L from "leaflet"
+import mapIcon from "../images/mapIcon.svg";
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
-
+let dubIcon = L.icon({
+  iconUrl: mapIcon,
+  iconRetinaUrl: mapIcon,
+  iconAnchor: [25, 25],
+  popupAnchor: [0, 0],
+  iconSize: [50, 50],
+});
 
 const Soundsystems = () => {
+  
   const data = useStaticQuery(graphql`
     query SoundsystemQuery {
       allStrapiSoundsystem {
@@ -39,13 +48,14 @@ const Soundsystems = () => {
     <Layout>
       <h1>The <b>Belgian Reggae Soundsystem List</b></h1>
       <Link style={{marginBottom:'20px'}} to="/">Back Home</Link>
+      
       <MapContainer style={{ borderRadius:'4px', height: '400px'}} center={[50.70538598041358, 4.494414422841746]} zoom={7}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://api.maptiler.com/maps/basic-v2/{z}/{x}/{y}.png?key=TSXhCTpRTaXUw3cJHU0A"
         />
         {data.allStrapiSoundsystem.nodes.map((sound, i) => (
-          <Marker key={i} position={[sound.lat, sound.long]}>
+          <Marker key={i} position={[sound.lat, sound.long]} icon={dubIcon}>
             <Popup>
               <div style={{textAlign:'center'}}>
                 <GatsbyImage image={getImage(sound.img.localFile.childImageSharp.gatsbyImageData)} alt={sound.slug} />
@@ -86,8 +96,8 @@ const Soundsystems = () => {
         </div>
     </Layout>
   )
-}
   
+}
 
 export const Head = () => <Seo title="Soundsystems" />
 
