@@ -3,6 +3,7 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
