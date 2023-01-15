@@ -70,10 +70,10 @@ const Soundsystems = () => {
                   padding:"10px",
                   borderRadius:"4px",
                   boxShadow:"4px 6px 5px var(--color-blue)"}}>
-                  <a href={sound.slug} style={{textDecoration:"none"}}>
-                  <h2 className="soundName"style={{fontWeight:'var(--font-bold)',lineHeight:'var(--line-height-dense)', margin:'0',height:"70px",textAlign:'center'}}> <b>{sound.name}</b> </h2>
-                  <GatsbyImage image={getImage(sound.img.localFile.childImageSharp.gatsbyImageData)} alt={sound.slug} style={{marginTop:'0',height:'250px'}} />
-                  </a>
+                  <Link to={sound.slug} style={{color:'inherit',textDecoration:"inherit"}}>
+                   <h2 className="soundName"style={{color:'var(--color-primary)',fontWeight:'var(--font-bold)',lineHeight:'var(--line-height-dense)', margin:'0',height:"70px",textAlign:'center'}}> <b>{sound.name}</b> </h2>
+                   <GatsbyImage image={getImage(sound.img.localFile.childImageSharp.gatsbyImageData)} alt={sound.slug} style={{marginTop:'0',height:'250px'}} />
+                  </Link>
                   <p style={{marginBottom:'0',textAlign:"left"}}>{sound.city} </p>
                   <p style={{marginBottom:'0',marginTop:'-25px',textAlign:"right"}}>{sound.year}</p>
                   {/* <p>{dubEvent.DESCRIPTION}</p> */}
