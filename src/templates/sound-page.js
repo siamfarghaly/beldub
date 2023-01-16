@@ -56,6 +56,6 @@ export const query = graphql`
   }
 `
 
-export const Head = () => <Seo title="Soundpage" />
+export const Head = ({data}) => <Seo title={data.strapiSoundsystem.name} />
 
 export default SoundPage
