@@ -40,7 +40,7 @@ const Soundsystems = () => {
   return (
     
     <Layout>
-      <h1>The <b>Belgian Reggae Soundsystem List</b></h1>
+      <h1>The <b>Belgian Reggae Soundsystem</b> List</h1>
       <Link style={{marginBottom:'20px'}} to="/">Back Home</Link>
       
       <MapContainer style={{ borderRadius:'4px', height: '400px'}} center={[50.70538598041358, 4.494414422841746]} zoom={7}>
@@ -51,10 +51,12 @@ const Soundsystems = () => {
         {data.allStrapiSoundsystem.nodes.map((sound, i) => (
           <Marker key={i} position={[sound.lat, sound.long]}>
             <Popup>
+              <Link to={sound.slug} style={{color:'inherit',textDecoration:"inherit"}}>
               <div style={{textAlign:'center'}}>
                 <GatsbyImage image={getImage(sound.img.localFile.childImageSharp.gatsbyImageData)} alt={sound.slug} />
                 <p><b>{sound.name}</b><br /> from {sound.city} <br /> {sound.year}</p> 
               </div>
+              </Link>
               
             </Popup>
           </Marker>
@@ -79,7 +81,7 @@ const Soundsystems = () => {
                    <GatsbyImage image={getImage(sound.img.localFile.childImageSharp.gatsbyImageData)} alt={sound.slug} style={{marginTop:'0',height:'250px'}} />
                   </Link>
                   <p style={{marginBottom:'0',textAlign:"left"}}>{sound.city} </p>
-                  <p style={{marginBottom:'0',marginTop:'-25px',textAlign:"right"}}>{sound.year}</p>
+                  {sound.year !== null && <p style={{marginBottom:'0',marginTop:'-25px',textAlign:"right"}}>{sound.year}</p>}
                   {/* <p>{dubEvent.DESCRIPTION}</p> */}
                   
                 </div>

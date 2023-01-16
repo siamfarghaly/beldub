@@ -7,23 +7,8 @@ import  "../components/index.module.css"
 
 
 
-const socials = [
-  { text: "Youtube", url: "https://www.youtube.com/@beldub9678" },
-  {
-    text: "Instagram",
-    url: "https://www.instagram.com/beldub_/",
-  },
-  {
-    text: "Facebook",
-    url: "https://www.facebook.com/beldubdocu",
-  },
-  {
-    text: "Tiktok",
-    url: "https://www.tiktok.com/@beldub_",
-  },
-]
 
-const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
+
 
 const IndexPage = () => (
   
@@ -42,12 +27,7 @@ const IndexPage = () => (
         <h3 style={{marginTop:'0'}}>WATCH DOCUMENTARY</h3>
       </a>
     </div> 
-    {socials.map((link, i) => (
-      <React.Fragment key={link.url}>
-        <a href={`${link.url}${utmParameters}`}>{link.text}</a>
-        {i !== socials.length - 1 && <> · </>}
-      </React.Fragment>
-    ))}
+    
   </Layout>
 )
 
