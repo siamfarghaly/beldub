@@ -53,7 +53,7 @@ const Dubcalendar = () => {
                     
                   </a>
                  
-                  {/* <p>{dubEvent.DESCRIPTION}</p> */}
+                  {/* <p>{dubEvent.DESCRIPTION}</p>  */}
                   
                 </div>
               )

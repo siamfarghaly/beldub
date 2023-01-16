@@ -13,7 +13,7 @@ const BlogPost = ({data}) => {
 
       <h1 style={{marginBottom:'var(--space-1)'}}>{title}</h1>
       <p>{createdAt}</p>
-      {video !== null && <iframe src={video} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>}
+      {video !== null && <iframe src={video} width="100%" height="400px"title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="true"></iframe>}
       {video === null && <GatsbyImage image={getImage(cover.localFile.childImageSharp.gatsbyImageData)} alt={slug} />}
       
       <p style={{margin:'auto'}}>{content.data.content}</p>
@@ -53,6 +53,6 @@ export const query = graphql`
   }
 `
 
-export const Head = () => <Seo title="BlogPost" />
+export const Head = ({data}) => <Seo title={data.strapiPost.title} />
 
 export default BlogPost
