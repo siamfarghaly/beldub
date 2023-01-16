@@ -39,9 +39,9 @@ const Header = ({ siteTitle }) => (
           <Link
             to="/blog"
             style={{
-              fontSize: `var(--font-md)`,
+              fontSize: `var(--font-lg)`,
               textDecoration: `none`,
-              fontWeight: 'var(--font-heavy)',
+              fontWeight: 'var(--font-bold)',
             }}
           >
             Blog
@@ -50,9 +50,10 @@ const Header = ({ siteTitle }) => (
         <li><Link
           to="/dubcalendar"
           style={{
-            fontSize: `var(--font-md)`,
+            fontSize: `var(--font-lg)`,
             textDecoration: `none`,
-            fontWeight: 'var(--font-heavy)',
+            fontWeight: 'var(--font-bold)',
+
           }}
         >
           Dubcalendar
@@ -60,9 +61,10 @@ const Header = ({ siteTitle }) => (
         <li><Link
           to="/soundsystems"
           style={{
-            fontSize: `var(--font-md)`,
+            fontSize: `var(--font-lg)`,
             textDecoration: `none`,
-            fontWeight: 'var(--font-heavy)',
+            fontWeight: 'var(--font-bold)',
+
           }}
         >
           Soundsystems
@@ -70,9 +72,10 @@ const Header = ({ siteTitle }) => (
         <li><Link
           to="/about"
           style={{
-            fontSize: `var(--font-md)`,
+            fontSize: `var(--font-lg)`,
             textDecoration: `none`,
-            fontWeight: 'var(--font-heavy)',
+            fontWeight: 'var(--font-bold)',
+
           }}
         >
           About

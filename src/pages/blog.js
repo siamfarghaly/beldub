@@ -52,7 +52,7 @@ const Blog = () => {
                 <Link style={{color:'inherit',textDecoration:'inherit'}} to={blogpost.slug}>
                   <GatsbyImage image={getImage(blogpost.cover.localFile.childImageSharp.gatsbyImageData)} alt={blogpost.slug} />
                   <h2 style={{lineHeight:'var(--line-height-dense)',color:'var(--color-primary)',marginTop:'var(--space-3)',marginBottom:'var(--space-2)',textAlign:'left'}}><b>{blogpost.title}</b></h2>
-                  <p style={{fontWeight: "var(--font-medium)"}}>{blogpost.content.data.content.slice(0, 250)}...</p>
+                  <p style={{fontWeight: "var(--font-medium)"}}>{blogpost.content.data.content.slice(0, 250)}<a style={{textDecoration:'none'}}> ...more</a></p>
                 </Link>
               </div>
         ))} </div>
