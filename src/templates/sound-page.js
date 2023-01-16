@@ -6,7 +6,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 
 const SoundPage = ({data}) => {
-  const {name, year, city, fb, insta, other, slug, img, updatedAt} = data.strapiSoundsystem
+  const {name, year, city, fb, insta, other, slug, img} = data.strapiSoundsystem
   return(
     <Layout>
       

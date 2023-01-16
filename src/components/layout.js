@@ -59,7 +59,7 @@ const Layout = ({ children }) => {
           }}
         >
           <div style={{ height:'2px', margin:'auto',maxWidth:'400px', backgroundColor:'var(--color-primary)'}}></div>
-          <h2 style={{marginTop:'var(--space-3)', marginBottom:'0'}}>Our social media channels:</h2>
+          <h2 style={{marginTop:'var(--space-3)', marginBottom:'var(--space-2)'}}>Our social media channels:</h2>
           <div >
             <a href={socials[0].url}><img style={{marginRight:'var(--space-2)',height:'40px'}} src={'/yt.png'} alt="youtube-icon" /></a>
             <a href={socials[1].url}><img style={{marginRight:'var(--space-2)',height:'40px'}} src={'/insta.png'} alt="insta-icon" /></a>

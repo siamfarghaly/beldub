@@ -47,10 +47,12 @@ const Dubcalendar = () => {
                   borderRadius:"4px",
                   boxShadow:"4px 6px 5px var(--color-blue)"}}>
                   <a href={dubEvent.URL} style={{textDecoration:"none"}}>
-                  <h3 className="eventTitle"style={{margin:"0", height:"80px"}}> <b>{dubEvent.SUMMARY}</b> </h3>
+                    <h3 className="eventTitle"style={{margin:"0", height:"80px"}}> <b>{dubEvent.SUMMARY}</b> </h3>
+                    <div style={{color:'var(--color-black)', textAlign:"left"}}> {formatDate(dubEvent.DTSTART)}<br/>
+                    {dubEvent.LOCATION}</div>
+                    
                   </a>
-                  <div style={{textAlign:"left"}}> {formatDate(dubEvent.DTSTART)}<br/>
-                  {dubEvent.LOCATION}</div>
+                 
                   {/* <p>{dubEvent.DESCRIPTION}</p> */}
                   
                 </div>

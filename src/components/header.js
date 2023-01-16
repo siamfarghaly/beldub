@@ -44,7 +44,7 @@ const Header = ({ siteTitle }) => (
               fontWeight: 'var(--font-bold)',
             }}
           >
-            Blog
+            News
           </Link>
         </li>
         <li><Link
@@ -56,7 +56,7 @@ const Header = ({ siteTitle }) => (
 
           }}
         >
-          Dubcalendar
+          Events
         </Link></li>
         <li><Link
           to="/soundsystems"
