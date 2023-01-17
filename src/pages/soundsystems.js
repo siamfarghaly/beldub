@@ -1,5 +1,5 @@
-import * as React from "react"
-import { Link, useStaticQuery, graphql } from "gatsby"
+import React, { useState } from "react"
+import { Link , graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -9,33 +9,70 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 
 
-const Soundsystems = () => {
+const Soundsystems = props => {
   
-  const data = useStaticQuery(graphql`
-    query SoundsystemQuery {
-      allStrapiSoundsystem {
-        nodes {
-          name
-          slug
-          year
-          lat
-          long
-          city
-          fb
-          insta
-          other
-          img {
-            url
-            localFile {
-              childImageSharp {
-                gatsbyImageData
-              }
-            }
-          }
-        }
-      }
-    }
-  `)
+  // const data = useStaticQuery(graphql`
+  //   query SoundsystemQuery {
+  //     allStrapiSoundsystem(sort: {name: ASC}) {
+  //       nodes {
+  //         name
+  //         slug
+  //         year
+  //         lat
+  //         long
+  //         city
+  //         fb
+  //         insta
+  //         other
+  //         img {
+  //           url
+  //           localFile {
+  //             childImageSharp {
+  //               gatsbyImageData
+  //             }
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // `)
+
+
+  const { data } = props
+  const allSounds = data.allStrapiSoundsystem.nodes
+
+  const emptyQuery = ""
+
+  const [state, setState] = useState({
+    filteredData: [],
+    query: emptyQuery,
+  })
+
+  const handleInputChange = event => {
+    console.log(event.target.value)
+    const query = event.target.value
+    const { data } = props
+
+    const sounds = data.allStrapiSoundsystem.nodes || []
+
+    const filteredData = sounds.filter(sound => {
+      const { name, city, year} = sound
+      return (
+        name.toLowerCase().includes(query.toLowerCase()) ||
+        (year==query) ||
+        city.toLowerCase().includes(query.toLowerCase())
+      )
+    })
+
+    setState({
+      query,
+      filteredData,
+    })
+  }
+
+  const { filteredData, query } = state
+  const hasSearchResults = filteredData && query !== emptyQuery
+  const sounds = hasSearchResults ? filteredData : allSounds
 
   return (
     
@@ -48,7 +85,7 @@ const Soundsystems = () => {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://api.maptiler.com/maps/basic-v2/{z}/{x}/{y}.png?key=TSXhCTpRTaXUw3cJHU0A"
         />
-        {data.allStrapiSoundsystem.nodes.map((sound, i) => (
+        {sounds.map((sound, i) => (
           <Marker key={i} position={[sound.lat, sound.long]}>
             <Popup>
               <Link to={sound.slug} style={{color:'inherit',textDecoration:"inherit"}}>
@@ -63,12 +100,25 @@ const Soundsystems = () => {
         ))}
         
       </MapContainer>
+      <div className="searchBox" style={{marginTop:'var(--space-3)'}}>
+        <label htmlFor="search"> Search: </label>
+        <input
+          
+          name="search"
+          className="searchInput"
+          type="text"
+          style={{width:'100%',height:'var(--space-6)'}}
+          aria-label="Search"
+          placeholder="For example `Gent` ,`Ionyouth` or `2018`..."
+          onChange={handleInputChange}
+        />
+      </div>
       <div className="eventBox" style={{display:"grid",
   gridTemplateColumns: "repeat( auto-fit, minmax(215px, 1fr) )",
   gridGap:"30px",
   marginTop:"30px"}}>
       {
-          data.allStrapiSoundsystem.nodes.map((sound, index) => {
+          sounds.map((sound, index) => {
             
               return(
                 <div className="soundCard" key={index} style={{ height:'360px',backgroundColor:"white",
@@ -82,7 +132,6 @@ const Soundsystems = () => {
                   </Link>
                   <p style={{marginBottom:'0',textAlign:"left"}}>{sound.city} </p>
                   {sound.year !== null && <p style={{marginBottom:'0',marginTop:'-25px',textAlign:"right"}}>{sound.year}</p>}
-                  {/* <p>{dubEvent.DESCRIPTION}</p> */}
                   
                 </div>
               )
@@ -98,3 +147,28 @@ const Soundsystems = () => {
 export const Head = () => <Seo title="Soundsystems" />
 
 export default Soundsystems
+export const pageQuery = graphql`
+query {
+  allStrapiSoundsystem(sort: {name: ASC}) {
+    nodes {
+      name
+      slug
+      year
+      lat
+      long
+      city
+      fb
+      insta
+      other
+      img {
+        url
+        localFile {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
+      }
+    }
+  }
+}
+`

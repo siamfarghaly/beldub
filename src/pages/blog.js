@@ -9,34 +9,35 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const Blog = () => {
   const data = useStaticQuery(graphql`
-    query BlogQuery {
-      allStrapiPost {
-        nodes {
-          title
-          slug
-          video
-          content {
-            data {
-              content
-            }
+  query BlogQuery {
+    allStrapiPost(sort: {publishedAt: DESC}) {
+      nodes {
+        title
+        slug
+        video
+        content {
+          data {
+            content
           }
-          other {
-            localFile {
-              childImageSharp {
-                gatsbyImageData
-              }
-            }
-          }
-          cover {
-            localFile {
-              childImageSharp {
-                gatsbyImageData
-              }
+        }
+        other {
+          localFile {
+            childImageSharp {
+              gatsbyImageData
             }
           }
         }
+        cover {
+          localFile {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
+        }
+        publishedAt
       }
     }
+  }
   `)
 
   return (
