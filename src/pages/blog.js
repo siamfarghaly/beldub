@@ -96,7 +96,7 @@ const Blog = props => {
   gridGap:"30px",
   marginTop:"30px"}}>
         {posts.map((blogpost, i) => (
-              <div key={i} style={{textAlign:'left'}}>
+              <div key={i} style={{maxWidth:'600px',textAlign:'left'}}>
                 <Link style={{color:'inherit',textDecoration:'inherit'}} to={blogpost.slug}>
                   <GatsbyImage style={{borderRadius:'4px'}} image={getImage(blogpost.cover.localFile.childImageSharp.gatsbyImageData)} alt={blogpost.slug} />
                   <h2 style={{lineHeight:'var(--line-height-dense)',color:'var(--color-primary)',marginTop:'var(--space-3)',marginBottom:'var(--space-2)',textAlign:'left'}}><b>{blogpost.title}</b></h2>
