@@ -1,5 +1,5 @@
-import * as React from "react"
-import { Link, useStaticQuery, graphql } from "gatsby"
+import React, { useState } from "react"
+import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -7,48 +7,95 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 
 
-const Blog = () => {
-  const data = useStaticQuery(graphql`
-  query BlogQuery {
-    allStrapiPost(sort: {publishedAt: DESC}) {
-      nodes {
-        title
-        slug
-        video
-        content {
-          data {
-            content
-          }
-        }
-        other {
-          localFile {
-            childImageSharp {
-              gatsbyImageData
-            }
-          }
-        }
-        cover {
-          localFile {
-            childImageSharp {
-              gatsbyImageData
-            }
-          }
-        }
-        publishedAt
-      }
-    }
+const Blog = props => {
+  // const data = useStaticQuery(graphql`
+  // query BlogQuery {
+  //   allStrapiPost(sort: {publishedAt: DESC}) {
+  //     nodes {
+  //       title
+  //       slug
+  //       video
+  //       content {
+  //         data {
+  //           content
+  //         }
+  //       }
+  //       other {
+  //         localFile {
+  //           childImageSharp {
+  //             gatsbyImageData
+  //           }
+  //         }
+  //       }
+  //       cover {
+  //         localFile {
+  //           childImageSharp {
+  //             gatsbyImageData
+  //           }
+  //         }
+  //       }
+  //       publishedAt
+  //     }
+  //   }
+  // }
+  // `)
+  const { data } = props
+  const allPosts = data.allStrapiPost.nodes
+
+  const emptyQuery = ""
+
+  const [state, setState] = useState({
+    filteredData: [],
+    query: emptyQuery,
+  })
+
+  const handleInputChange = event => {
+    console.log(event.target.value)
+    const query = event.target.value
+    const { data } = props
+
+    const posts = data.allStrapiPost.nodes || []
+
+    const filteredData = posts.filter(post => {
+      const { title, content} = post
+      return (
+        title.toLowerCase().includes(query.toLowerCase()) ||
+        content.data.content.toLowerCase().includes(query.toLowerCase())
+      )
+    })
+
+    setState({
+      query,
+      filteredData,
+    })
   }
-  `)
+
+  const { filteredData, query } = state
+  const hasSearchResults = filteredData && query !== emptyQuery
+  const posts = hasSearchResults ? filteredData : allPosts
 
   return (
     <Layout>
       <h1 style={{marginBottom:'var(--space-3)'}}>Latest <b>Videos, Articles & Interviews</b></h1>
       <Link to="/">Back Home</Link>
+      <div className="searchBox" style={{marginBottom:'var(--space-3)',marginTop:'var(--space-3)'}}>
+        <label style={{fontSize:'var(--font-lg)',fontWeight:'var(--font-bold)'}}htmlFor="search">🔎 Search: </label>
+        <input
+          
+          name="search"
+          className="searchInput"
+          type="text"
+          style={{paddingLeft:'var(--space-3)',borderRadius:'4px',fontSize:'var(--font-lg)',width:'100%',height:'var(--space-6)'}}
+          aria-label="Search"
+          placeholder="For example `King Alpha`,`Interview` or `Youth & Truth`..."
+          onChange={handleInputChange}
+        />
+      </div>
       <div className="blogPosts" style={{display:"grid",
   gridTemplateColumns: "repeat( auto-fit, minmax(300px, 1fr) )",
   gridGap:"30px",
   marginTop:"30px"}}>
-        {data.allStrapiPost.nodes.map((blogpost, i) => (
+        {posts.map((blogpost, i) => (
               <div key={i} style={{textAlign:'left'}}>
                 <Link style={{color:'inherit',textDecoration:'inherit'}} to={blogpost.slug}>
                   <GatsbyImage style={{borderRadius:'4px'}} image={getImage(blogpost.cover.localFile.childImageSharp.gatsbyImageData)} alt={blogpost.slug} />
@@ -65,3 +112,34 @@ const Blog = () => {
 export const Head = () => <Seo title="Blog" />
 
 export default Blog
+export const pageQuery = graphql`
+query BlogQuery {
+  allStrapiPost(sort: {publishedAt: DESC}) {
+    nodes {
+      title
+      slug
+      video
+      content {
+        data {
+          content
+        }
+      }
+      other {
+        localFile {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
+      }
+      cover {
+        localFile {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
+      }
+      publishedAt
+    }
+  }
+}
+`
