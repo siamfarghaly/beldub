@@ -79,8 +79,8 @@ const Soundsystems = props => {
     <Layout>
       <h1 style={{marginBottom:'0'}}>The <b>Belgian Reggae Soundsystem</b> List</h1>
       <Link to="/">Back Home</Link>
-      <div className="searchBox" style={{padding:'var(--space-3)',marginBottom:'var(--space-3)',marginTop:'var(--space-3)'}}>
-        <label style={{fontSize:'var(--font-lg)',fontWeight:'var(--font-bold)',margin:'0 var(--space-3)'}}htmlFor="search"> Search: </label>
+      <div className="searchBox" style={{marginBottom:'var(--space-3)',marginTop:'var(--space-3)'}}>
+        <label style={{fontSize:'var(--font-lg)',fontWeight:'var(--font-bold)'}}htmlFor="search"> Search: </label>
         <input
           
           name="search"
@@ -126,7 +126,8 @@ const Soundsystems = props => {
                   color:"var(--color-black)",
                   padding:"10px",
                   borderRadius:"4px",
-                  boxShadow:"4px 6px 5px var(--color-blue)"}}>
+                  boxShadow:"4px 6px 5px var(--color-blue)",
+                  maxWidth:"500px"}}>
                   <Link to={sound.slug} style={{color:'inherit',textDecoration:"inherit"}}>
                    <h2 className="soundName"style={{color:'var(--color-primary)',fontWeight:'var(--font-bold)',lineHeight:'var(--line-height-dense)', margin:'0',height:"70px",textAlign:'center'}}> <b>{sound.name}</b> </h2>
                    <GatsbyImage image={getImage(sound.img.localFile.childImageSharp.gatsbyImageData)} alt={sound.slug} style={{marginTop:'0',height:'250px'}} />
