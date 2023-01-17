@@ -1,23 +1,61 @@
-import * as React from "react"
-import { Link, useStaticQuery, graphql } from "gatsby"
+import React, { useState } from "react"
+import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
 
-const Dubcalendar = () => {
-  const data = useStaticQuery(graphql`
-  query EventQuery {
-    allStrapiEventcalendar {
-      nodes {
-        content
-      }
-    }
-  }
-  `);
+const Dubcalendar = props => {
+  // const data = useStaticQuery(graphql`
+  // query EventQuery {
+  //   allStrapiEventcalendar {
+  //     nodes {
+  //       content
+  //     }
+  //   }
+  // }
+  // `);
   
+  
+  const { data } = props
   let json = JSON.parse(data.allStrapiEventcalendar.nodes[0].content);
-  const dubEvents = json.VCALENDAR[0].VEVENT;
+
+  const allDubEvents = json.VCALENDAR[0].VEVENT;
+
+
+  const emptyQuery = ""
+
+  const [state, setState] = useState({
+    filteredData: [],
+    query: emptyQuery,
+  })
+
+  const handleInputChange = event => {
+    console.log(event.target.value)
+    const query = event.target.value
+    const { data } = props
+    let json = JSON.parse(data.allStrapiEventcalendar.nodes[0].content);
+    const dubEvents = json.VCALENDAR[0].VEVENT || []
+
+    const filteredData = dubEvents.filter(dubEvent => {
+      const { SUMMARY, LOCATION, DESCRIPTION} = dubEvent
+      return (
+        SUMMARY.toLowerCase().includes(query.toLowerCase()) ||
+        DESCRIPTION.toLowerCase().includes(query.toLowerCase()) ||
+        LOCATION.toLowerCase().includes(query.toLowerCase())
+      )
+    })
+
+    setState({
+      query,
+      filteredData,
+    })
+  }
+
+  const { filteredData, query } = state
+  const hasSearchResults = filteredData && query !== emptyQuery
+  const dubEvents = hasSearchResults ? filteredData : allDubEvents
+
   function formatDate(dateCode){
        let year        = dateCode.substring(0,4);
        let month       = dateCode.substring(4,6);
@@ -31,8 +69,21 @@ const Dubcalendar = () => {
      }
   return(
     <Layout>
-      <h1>Upcoming Dub & Soundsystem <b>Events in Belgium</b></h1>
-      <Link style={{marginBottom:'20px'}} to="/">Back Home</Link>
+      <h1 style={{marginBottom:'var(--space-3)'}}>Upcoming Dub & Soundsystem <b>Events in Belgium</b></h1>
+      <Link to="/">Back Home</Link>
+      <div className="searchBox" style={{marginBottom:'var(--space-3)',marginTop:'var(--space-3)'}}>
+        <label style={{fontSize:'var(--font-lg)',fontWeight:'var(--font-bold)'}}htmlFor="search">🔎 Search: </label>
+        <input
+          
+          name="search"
+          className="searchInput"
+          type="text"
+          style={{paddingLeft:'var(--space-3)',borderRadius:'4px',fontSize:'var(--font-lg)',width:'100%',height:'var(--space-6)'}}
+          aria-label="Search"
+          placeholder="For example `Buda BXL` ,`Kingstep` or 'Festival'..."
+          onChange={handleInputChange}
+        />
+      </div>
       <div className="eventBox" style={{display:"grid",
   gridTemplateColumns: "repeat( auto-fit, minmax(300px, 1fr) )",
   gridGap:"30px",
@@ -45,7 +96,8 @@ const Dubcalendar = () => {
                   color:"var(--color-black)",
                   padding:"10px",
                   borderRadius:"4px",
-                  boxShadow:"4px 6px 5px var(--color-blue)"}}>
+                  boxShadow:"4px 6px 5px var(--color-blue)",
+                  maxWidth:"600px"}}>
                   <a href={dubEvent.URL} style={{textDecoration:"none"}}>
                     <h3 className="eventTitle"style={{margin:"0", height:"80px"}}> <b>{dubEvent.SUMMARY}</b> </h3>
                     <div style={{color:'var(--color-black)', textAlign:"left"}}> {formatDate(dubEvent.DTSTART)}<br/>
@@ -68,3 +120,12 @@ const Dubcalendar = () => {
 export const Head = () => <Seo title="Dubcalendar" />
 
 export default Dubcalendar
+export const pageQuery = graphql`
+query {
+  allStrapiEventcalendar {
+    nodes {
+      content
+    }
+  }
+}
+`

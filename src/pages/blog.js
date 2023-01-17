@@ -42,8 +42,8 @@ const Blog = () => {
 
   return (
     <Layout>
-      <h1>Latest <b>Videos, Articles & Interviews</b></h1>
-      <Link style={{marginBottom:'20px'}} to="/">Back Home</Link>
+      <h1 style={{marginBottom:'var(--space-3)'}}>Latest <b>Videos, Articles & Interviews</b></h1>
+      <Link to="/">Back Home</Link>
       <div className="blogPosts" style={{display:"grid",
   gridTemplateColumns: "repeat( auto-fit, minmax(300px, 1fr) )",
   gridGap:"30px",

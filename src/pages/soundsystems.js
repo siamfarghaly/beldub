@@ -76,10 +76,10 @@ const Soundsystems = props => {
   return (
     
     <Layout>
-      <h1 style={{marginBottom:'0'}}>The <b>Belgian Reggae Soundsystem</b> List</h1>
+      <h1 style={{marginBottom:'var(--space-3)'}}>The <b>Belgian Reggae Soundsystem</b> List</h1>
       <Link to="/">Back Home</Link>
       <div className="searchBox" style={{marginBottom:'var(--space-3)',marginTop:'var(--space-3)'}}>
-        <label style={{fontSize:'var(--font-lg)',fontWeight:'var(--font-bold)'}}htmlFor="search"> Search: </label>
+        <label style={{fontSize:'var(--font-lg)',fontWeight:'var(--font-bold)'}}htmlFor="search">🔎 Search: </label>
         <input
           
           name="search"
@@ -87,7 +87,7 @@ const Soundsystems = props => {
           type="text"
           style={{paddingLeft:'var(--space-3)',borderRadius:'4px',fontSize:'var(--font-lg)',width:'100%',height:'var(--space-6)'}}
           aria-label="Search"
-          placeholder="🔎 For example `Gent` ,`Ionyouth` or `2018`..."
+          placeholder="For example `Gent` ,`Ionyouth` or `2018`..."
           onChange={handleInputChange}
         />
       </div>
@@ -126,7 +126,7 @@ const Soundsystems = props => {
                   padding:"10px",
                   borderRadius:"4px",
                   boxShadow:"4px 6px 5px var(--color-blue)",
-                  maxWidth:"500px"}}>
+                  maxWidth:"600px"}}>
                   <Link to={sound.slug} style={{color:'inherit',textDecoration:"inherit"}}>
                    <h2 className="soundName"style={{color:'var(--color-primary)',fontWeight:'var(--font-bold)',lineHeight:'var(--line-height-dense)', margin:'0',height:"70px",textAlign:'center'}}> <b>{sound.name}</b> </h2>
                    <GatsbyImage image={getImage(sound.img.localFile.childImageSharp.gatsbyImageData)} alt={sound.slug} style={{marginTop:'0',height:'250px'}} />
