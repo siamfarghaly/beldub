@@ -51,7 +51,7 @@ const Blog = () => {
         {data.allStrapiPost.nodes.map((blogpost, i) => (
               <div key={i} style={{textAlign:'left'}}>
                 <Link style={{color:'inherit',textDecoration:'inherit'}} to={blogpost.slug}>
-                  <GatsbyImage image={getImage(blogpost.cover.localFile.childImageSharp.gatsbyImageData)} alt={blogpost.slug} />
+                  <GatsbyImage style={{borderRadius:'4px'}} image={getImage(blogpost.cover.localFile.childImageSharp.gatsbyImageData)} alt={blogpost.slug} />
                   <h2 style={{lineHeight:'var(--line-height-dense)',color:'var(--color-primary)',marginTop:'var(--space-3)',marginBottom:'var(--space-2)',textAlign:'left'}}><b>{blogpost.title}</b></h2>
                   <p style={{fontWeight: "var(--font-medium)"}}>{blogpost.content.data.content.slice(0, 250)}<a href={blogpost.slug}style={{textDecoration:'none'}}> ...more</a></p>
                 </Link>

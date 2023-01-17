@@ -51,11 +51,16 @@ const Layout = ({ children }) => {
         }}
       >
         <main>{children}</main>
-        <footer
+        
+      </div>
+      <footer
           style={{
+            padding:'var(--space-5)',
             marginTop: `var(--space-5)`,
             fontSize: `var(--font-sm)`,
             textAlign:'center',
+            width: '100%',
+            backgroundColor: 'var(--color-black)'
           }}
         >
           <div style={{ height:'2px', margin:'auto',maxWidth:'400px', backgroundColor:'var(--color-primary)'}}></div>
@@ -72,7 +77,6 @@ const Layout = ({ children }) => {
           {` `}
           <a href="https://www.linkedin.com/in/siam-farghaly/">Siam Farghaly</a>
         </footer>
-      </div>
     </>
   )
 }

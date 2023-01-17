@@ -12,7 +12,9 @@ html, body {
 * {
   box-sizing: border-box;
 }
-
+header{
+  background-color: var(--color-black);
+}
 .top-nav {
     text-decoration: none;
   display: flex;
@@ -24,7 +26,10 @@ html, body {
   color: #FFF;
   height: 100px;
   padding: 1em;
-width: 100%;}
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+}
 
 .menu {
   display: flex;
@@ -126,6 +131,12 @@ width: 100%;}
     padding: 1.1em;
     transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
   }
+
+  #menu-toggle:checked ~ .menu li .menuLink{
+    width: 100%;
+    text-align:center ;
+  }
+
   .menu > li {
     display: flex;
     justify-content: center;

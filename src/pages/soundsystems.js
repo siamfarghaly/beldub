@@ -77,10 +77,23 @@ const Soundsystems = props => {
   return (
     
     <Layout>
-      <h1>The <b>Belgian Reggae Soundsystem</b> List</h1>
-      <Link style={{marginBottom:'20px'}} to="/">Back Home</Link>
+      <h1 style={{marginBottom:'0'}}>The <b>Belgian Reggae Soundsystem</b> List</h1>
+      <Link to="/">Back Home</Link>
+      <div className="searchBox" style={{padding:'var(--space-3)',marginBottom:'var(--space-3)',marginTop:'var(--space-3)'}}>
+        <label style={{fontSize:'var(--font-lg)',fontWeight:'var(--font-bold)',margin:'0 var(--space-3)'}}htmlFor="search"> Search: </label>
+        <input
+          
+          name="search"
+          className="searchInput"
+          type="text"
+          style={{paddingLeft:'var(--space-3)',borderRadius:'4px',fontSize:'var(--font-lg)',width:'100%',height:'var(--space-6)'}}
+          aria-label="Search"
+          placeholder="🔎 For example `Gent` ,`Ionyouth` or `2018`..."
+          onChange={handleInputChange}
+        />
+      </div>
       
-      <MapContainer style={{ borderRadius:'4px', height: '400px'}} center={[50.70538598041358, 4.494414422841746]} zoom={7}>
+      <MapContainer style={{ borderRadius:'4px', height: '400px'}} center={[50.70538598041358, 4.494414422841746]} dragging={false} zoom={7}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://api.maptiler.com/maps/basic-v2/{z}/{x}/{y}.png?key=TSXhCTpRTaXUw3cJHU0A"
@@ -100,19 +113,7 @@ const Soundsystems = props => {
         ))}
         
       </MapContainer>
-      <div className="searchBox" style={{marginTop:'var(--space-3)'}}>
-        <label htmlFor="search"> Search: </label>
-        <input
-          
-          name="search"
-          className="searchInput"
-          type="text"
-          style={{width:'100%',height:'var(--space-6)'}}
-          aria-label="Search"
-          placeholder="For example `Gent` ,`Ionyouth` or `2018`..."
-          onChange={handleInputChange}
-        />
-      </div>
+      
       <div className="eventBox" style={{display:"grid",
   gridTemplateColumns: "repeat( auto-fit, minmax(215px, 1fr) )",
   gridGap:"30px",

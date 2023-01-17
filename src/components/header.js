@@ -6,9 +6,10 @@ import "./header.css"
 const Header = ({ siteTitle }) => (
   <header
     style={{
-      maxWidth: '1000px',
+      width:'100%',
       margin: 'auto',
       zIndex: '1000',
+      
     }}
   >
     <section className="top-nav">
@@ -37,6 +38,7 @@ const Header = ({ siteTitle }) => (
       <ul className="menu">
         <li>
           <Link
+            className="menuLink"
             to="/blog"
             style={{
               fontSize: `var(--font-lg)`,
@@ -48,6 +50,7 @@ const Header = ({ siteTitle }) => (
           </Link>
         </li>
         <li><Link
+          className="menuLink"
           to="/dubcalendar"
           style={{
             fontSize: `var(--font-lg)`,
@@ -59,6 +62,7 @@ const Header = ({ siteTitle }) => (
           Events
         </Link></li>
         <li><Link
+          className="menuLink"
           to="/soundsystems"
           style={{
             fontSize: `var(--font-lg)`,
@@ -70,6 +74,7 @@ const Header = ({ siteTitle }) => (
           Soundsystems
         </Link></li>
         <li><Link
+          className="menuLink"
           to="/about"
           style={{
             fontSize: `var(--font-lg)`,

@@ -34,7 +34,7 @@
   --size-gap: var(--space-6);
 }
 html {
-  background-color: var(--color-black);
+  background-color: #161615;
   -webkit-text-size-adjust: 100%;
   box-sizing: border-box;
   font: sans-serif;

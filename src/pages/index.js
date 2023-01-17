@@ -23,7 +23,7 @@ const IndexPage = () => (
      <h1 style={{fontSize:'2.5rem',textAlign:'center'}}>
         The platform that brings you reports of everything <b>dubbing in Belgium.</b>
       </h1>
-      <a href="https://vimeo.com/201431711" className="actionButton" style={{padding:'.6rem',textAlign:'center',textDecoration:'none',cursor:'pointer',boxShadow:"4px 6px 5px var(--color-blue)", margin:'0 auto',width:'250px',color:'var(--color-primary)', border:'2px solid var(--color-primary)',backgroundColor:'black', height:'50px'}}>
+      <a href="https://vimeo.com/201431711" className="actionButton" style={{padding:'.6rem',textAlign:'center',textDecoration:'none',cursor:'pointer',boxShadow:"4px 6px 5px var(--color-blue)", margin:'0 auto',width:'250px',color:'var(--color-primary)', border:'2px solid var(--color-primary)',borderRadius:'4px',backgroundColor:'#161615', height:'50px'}}>
         <h3 style={{marginTop:'0'}}>WATCH DOCUMENTARY</h3>
       </a>
     </div> 
