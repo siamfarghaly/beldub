@@ -5,8 +5,6 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import L from 'leaflet'
-
 
 
 
@@ -94,7 +92,7 @@ const Soundsystems = props => {
         />
       </div>
       
-      <MapContainer style={{ borderRadius:'4px', height: '400px'}} center={[50.70538598041358, 4.494414422841746]} dragging={!L.Browser.mobile} zoom={7}>
+      <MapContainer style={{ borderRadius:'4px', height: '400px'}} center={[50.70538598041358, 4.494414422841746]} dragging={false} zoom={7}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://api.maptiler.com/maps/basic-v2/{z}/{x}/{y}.png?key=TSXhCTpRTaXUw3cJHU0A"
