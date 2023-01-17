@@ -113,26 +113,30 @@ const Soundsystems = props => {
         
       </MapContainer>
       
-      <div className="eventBox" style={{display:"grid",
+      <div className="soundBox" style={{display:"grid",
   gridTemplateColumns: "repeat( auto-fit, minmax(215px, 1fr) )",
   gridGap:"30px",
-  marginTop:"30px"}}>
+  marginTop:"var(--space-3)"}}>
       {
           sounds.map((sound, index) => {
             
               return(
                 <div className="soundCard" key={index} style={{ height:'360px',backgroundColor:"white",
-                  color:"var(--color-black)",
-                  padding:"10px",
+                  backgroundColor:"var(--color-text)",
+                  padding:"var(--space-1)",
                   borderRadius:"4px",
-                  boxShadow:"4px 6px 5px var(--color-blue)",
+                  border:'1px solid var(--color-primary)',
+                  boxShadow:"4px 6px 5px var(--color-primary)",
                   maxWidth:"600px"}}>
                   <Link to={sound.slug} style={{color:'inherit',textDecoration:"inherit"}}>
-                   <h2 className="soundName"style={{color:'var(--color-primary)',fontWeight:'var(--font-bold)',lineHeight:'var(--line-height-dense)', margin:'0',height:"70px",textAlign:'center'}}> <b>{sound.name}</b> </h2>
-                   <GatsbyImage image={getImage(sound.img.localFile.childImageSharp.gatsbyImageData)} alt={sound.slug} style={{marginTop:'0',height:'250px'}} />
+                    <div style={{height:'70px',display:'flex', flexDirection:'column', justifyContent:'center'}}>
+                    <h2 className="soundName"style={{color:'var(--color-primary)',fontWeight:'var(--font-heavy)',lineHeight:'1.8rem', margin:'0',textAlign:'center',padding:'var(--space-4)'}}> <b>{sound.name}</b> </h2>
+
+                    </div>
+                   <GatsbyImage image={getImage(sound.img.localFile.childImageSharp.gatsbyImageData)} alt={sound.slug} style={{marginTop:'0',borderRadius:'4px',height:'250px'}} />
                   </Link>
-                  <p style={{marginBottom:'0',textAlign:"left"}}>{sound.city} </p>
-                  {sound.year !== null && <p style={{marginBottom:'0',marginTop:'-25px',textAlign:"right"}}>{sound.year}</p>}
+                  <p style={{marginLeft:'var(--space-2)',fontWeight:'var(--font-bold)',marginBottom:'0',marginTop:'var(--space-1)',textAlign:"left",color:'var(--color-black)'}}>{sound.city} </p>
+                  {sound.year !== null && <p style={{marginRight:'var(--space-2)', fontWeight:'var(--font-bold)', marginBottom:'0',color:'var(--color-black)',marginTop:'-25px',textAlign:"right"}}>{sound.year}</p>}
                   
                 </div>
               )
