@@ -102,7 +102,7 @@ const Soundsystems = props => {
             <Popup>
               <Link to={sound.slug} style={{color:'inherit',textDecoration:"inherit"}}>
               <div style={{textAlign:'center'}}>
-                <GatsbyImage image={getImage(sound.img.localFile.childImageSharp.gatsbyImageData)} alt={sound.slug} />
+                <GatsbyImage style={{borderRadius:'4px'}} image={getImage(sound.img.localFile.childImageSharp.gatsbyImageData)} alt={sound.slug} />
                 <p><b>{sound.name}</b><br /> from {sound.city} <br /> {sound.year}</p> 
               </div>
               </Link>
