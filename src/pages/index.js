@@ -52,7 +52,7 @@ const IndexPage = props => {
         
         </div>
         <div style={{display:'flex', flexDirection:'column', justifyContent:'space-between', marginBottom:'var(--space-4)'}}>
-          <a href="https://vimeo.com/201431711" className="actionButton" style={{padding:'1rem',textAlign:'center',textDecoration:'none',cursor:'pointer',boxShadow:"4px 6px 5px var(--color-blue)", margin:'0 auto',width:'300px',color:'var(--color-primary)', border:'2px solid var(--color-primary)',borderRadius:'4px',backgroundColor:'#161615', height:'65px'}}>
+          <a href="/blog" className="actionButton" style={{padding:'1rem',textAlign:'center',textDecoration:'none',cursor:'pointer',boxShadow:"4px 6px 5px var(--color-blue)", margin:'0 auto',width:'300px',color:'var(--color-primary)', border:'2px solid var(--color-primary)',borderRadius:'4px',backgroundColor:'#161615', height:'65px'}}>
            <h3 style={{marginTop:'0',marginBottom:'var(--space-3)'}}>VIEW ALL</h3>
           </a>
         </div>
