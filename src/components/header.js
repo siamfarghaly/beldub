@@ -46,7 +46,7 @@ const Header = ({ siteTitle }) => (
               fontWeight: 'var(--font-bold)',
             }}
           >
-            News
+            Blog
           </Link>
         </li>
         <li><Link

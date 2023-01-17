@@ -36,10 +36,10 @@ const IndexPage = props => {
     <div className="blogPosts" style={{display:"grid", gridTemplateColumns: "repeat( auto-fit, minmax(300px, 1fr) )", gridGap:"30px", marginTop:"30px"}}>
         {allPosts.map((blogpost, i) => (
               <div key={i} style={{maxWidth:'600px',textAlign:'left'}}>
-                <Link style={{color:'inherit',textDecoration:'inherit'}} to={blogpost.slug}>
+                <Link style={{color:'inherit',textDecoration:'inherit'}} to={"blog/" + blogpost.slug}>
                   <GatsbyImage style={{borderRadius:'4px'}} image={getImage(blogpost.cover.localFile.childImageSharp.gatsbyImageData)} alt={blogpost.slug} />
                   <h2 style={{lineHeight:'var(--line-height-dense)',color:'var(--color-primary)',marginTop:'var(--space-3)',marginBottom:'var(--space-2)',textAlign:'left'}}><b>{blogpost.title}</b></h2>
-                  <p style={{fontWeight: "var(--font-medium)"}}>{blogpost.content.data.content.slice(0, 250)}<a href={blogpost.slug}style={{textDecoration:'none'}}> ...more</a></p>
+                  <p style={{fontWeight: "var(--font-medium)"}}>{blogpost.content.data.content.slice(0, 250)}<span style={{textDecoration:'none', color:'var(--color-primary)'}}> ...more</span></p>
                 </Link>
               </div>
         ))} </div>
