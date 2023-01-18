@@ -48,7 +48,7 @@ export const query = graphql`
             }
             }
         }
-        createdAt(fromNow: true)
+        createdAt(formatString: "DD MMMM, YYYY")
     }
   }
 `

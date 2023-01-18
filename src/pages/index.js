@@ -91,7 +91,7 @@ query {
           }
         }
       }
-      publishedAt(fromNow: true)
+      publishedAt(formatString: "DD MMMM, YYYY")
     }
   }
 }

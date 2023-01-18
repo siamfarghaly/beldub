@@ -139,7 +139,7 @@ query BlogQuery {
           }
         }
       }
-      publishedAt(fromNow: true)
+      publishedAt(formatString: "DD MMMM, YYYY")
     }
   }
 }
