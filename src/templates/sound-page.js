@@ -97,11 +97,7 @@ export const query = graphql`
           childImageSharp {
             gatsbyImageData
           }
-        }
-        formats {
-          small {
-            url
-          }
+          url
         }
       }
       updatedAt(fromNow: true)
@@ -116,8 +112,8 @@ export const query = graphql`
 
 export const Head = ({data}) => (
   <Seo title={data.strapiSoundsystem.name}>
-    <meta property="og:image" content={data.strapiSoundsystem.img.formats.small.url} />
-    <meta name="image" content={data.strapiSoundsystem.img.formats.small.url} />
+    <meta property="og:image" content={data.strapiSoundsystem.img.localFile.url} />
+    <meta name="image" content={data.strapiSoundsystem.img.localFile.url} />
   </Seo>
   )
 
