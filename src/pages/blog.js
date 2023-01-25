@@ -110,7 +110,7 @@ const Blog = props => {
 }
   
 
-export const Head = () => <Seo title="Blog" />
+export const Head = () => <Seo title="Beldub » Blog" />
 
 export default Blog
 export const pageQuery = graphql`
