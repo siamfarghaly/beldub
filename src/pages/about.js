@@ -20,6 +20,11 @@ const About = () => (
   </Layout>
 )
 
-export const Head = () => <Seo title="About page" />
+export const Head = () => (
+  <Seo title="About Us">
+    <meta property="og:image" content="../beldub-during-interview.jpeg" />
+    <meta name="image" content="../beldub-during-interview.jpeg" />
+  </Seo>
+)
 
 export default About

@@ -62,7 +62,12 @@ const IndexPage = props => {
   
   }
 
-export const Head = () => <Seo title="Home" />
+export const Head = () => (
+  <Seo title="Home">
+    <meta property="og:image" content="../beldubcover.jpg" />
+    <meta name="image" content="../beldubcover.jpg" />
+  </Seo>
+)
 
 export default IndexPage
 export const pageQuery = graphql`

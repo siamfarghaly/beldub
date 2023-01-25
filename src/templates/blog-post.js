@@ -42,17 +42,23 @@ export const query = graphql`
             }
         }
         cover {
-            localFile {
+          localFile {
             childImageSharp {
                 gatsbyImageData
             }
-            }
+            url
+          }
         }
         createdAt(formatString: "DD MMMM, YYYY")
     }
   }
 `
 
-export const Head = ({data}) => <Seo title={data.strapiPost.title} />
+export const Head = ({data}) => (
+  <Seo title={data.strapiPost.title}>
+    <meta property="og:image" content={data.strapiPost.cover.localFile.url} />
+    <meta name="image" content={data.strapiPost.cover.localFile.url} />
+  </Seo>
+)
 
 export default BlogPost
