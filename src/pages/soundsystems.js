@@ -150,7 +150,7 @@ const Soundsystems = props => {
   
 }
 
-export const Head = () => <Seo title="Beldub » Soundsystems" />
+export const Head = () => <Seo title="Soundsystems" />
 
 export default Soundsystems
 export const pageQuery = graphql`

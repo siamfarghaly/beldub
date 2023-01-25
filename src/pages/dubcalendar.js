@@ -117,7 +117,7 @@ const Dubcalendar = props => {
   )
 }
 
-export const Head = () => <Seo title="Beldub » Dubcalendar" />
+export const Head = () => <Seo title="Dubcalendar" />
 
 export default Dubcalendar
 export const pageQuery = graphql`

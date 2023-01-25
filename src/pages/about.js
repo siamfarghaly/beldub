@@ -21,7 +21,7 @@ const About = () => (
 )
 
 export const Head = () => (
-  <Seo title="Beldub » About">
+  <Seo title="About">
     <meta property="og:image" content="../beldub-during-interview.jpeg" />
     <meta name="image" content="../beldub-during-interview.jpeg" />
   </Seo>
