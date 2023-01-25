@@ -150,7 +150,12 @@ const Soundsystems = props => {
   
 }
 
-export const Head = () => <Seo title="Soundsystems" />
+export const Head = () => (
+  <Seo title="Soundsystems">
+    <meta property="og:image" content="../soundsystems-cover.jpg" />
+    <meta name="image" content="../soundsystems-cover.jpg" />
+  </Seo>
+)
 
 export default Soundsystems
 export const pageQuery = graphql`

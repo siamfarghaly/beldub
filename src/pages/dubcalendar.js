@@ -117,7 +117,12 @@ const Dubcalendar = props => {
   )
 }
 
-export const Head = () => <Seo title="Dubcalendar" />
+export const Head = () => (
+  <Seo title="Dubcalendar">
+    <meta property="og:image" content="../events-cover.jpg" />
+    <meta name="image" content="../events-cover.jpg" />
+  </Seo>
+)
 
 export default Dubcalendar
 export const pageQuery = graphql`

@@ -110,7 +110,12 @@ const Blog = props => {
 }
   
 
-export const Head = () => <Seo title="Blog" />
+export const Head = () => (
+  <Seo title="Blog">
+    <meta property="og:image" content="../blog-cover.jpg" />
+    <meta name="image" content="../blog-cover.jpg" />
+  </Seo>
+)
 
 export default Blog
 export const pageQuery = graphql`
