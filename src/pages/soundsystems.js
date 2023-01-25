@@ -152,8 +152,8 @@ const Soundsystems = props => {
 
 export const Head = () => (
   <Seo title="Soundsystems">
-    <meta property="og:image" content="../soundsystems-cover.jpg" />
-    <meta name="image" content="../soundsystems-cover.jpg" />
+    <meta property="og:image" content="../soundsystem-cover.jpg" />
+    <meta name="image" content="../soundsystem-cover.jpg" />
   </Seo>
 )
 
