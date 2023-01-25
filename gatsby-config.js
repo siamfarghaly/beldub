@@ -9,10 +9,10 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Beldub: Dub & Soundsystem Culture Belgium`,
-    description: `BelDub created a platform that brings you reports of everything dubbing in Belgium. It's the sequel to a documentary on Belgian soundsystem culture.`,
-    author: `@beldubdocu`,
-    siteUrl: `https://www.beldub.be/`,
+    title: `BelDUB: Dub & Soundsystem Culture Belgium`,
+    description: `BelDUB is a platform that brings you reports of everything dubbing in Belgium. It's the sequel to a documentary on Belgian soundsystem culture.`,
+    author: `@BelDUB`,
+    siteUrl: `https://beldub.be/`,
   },
   plugins: [
       {
