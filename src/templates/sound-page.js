@@ -98,9 +98,14 @@ export const query = graphql`
             gatsbyImageData
           }
         }
+        formats {
+          thumbnail {
+            url
+          }
+        }
       }
       updatedAt(fromNow: true)
-    },
+    }
     allStrapiEventcalendar {
       nodes {
         content
@@ -111,7 +116,8 @@ export const query = graphql`
 
 export const Head = ({data}) => (
   <Seo title={data.strapiSoundsystem.name}>
-    <meta name="og:image" content="../logo-beldub.png" />
+    <meta name="og:image" content={data.strapiSoundsystem.img.formats.thumbnail.url} />
+    <meta name="image" content={data.strapiSoundsystem.img.formats.thumbnail.url} />
   </Seo>
   )
 
