@@ -99,7 +99,7 @@ export const query = graphql`
           }
         }
         formats {
-          thumbnail {
+          small {
             url
           }
         }
@@ -117,7 +117,7 @@ export const query = graphql`
 export const Head = ({data}) => (
   <Seo title={data.strapiSoundsystem.name}>
     <meta property="og:image" content={data.strapiSoundsystem.img.formats.thumbnail.url} />
-    <meta name="image" content={data.strapiSoundsystem.img.formats.thumbnail.url} />
+    <meta name="image" content={data.strapiSoundsystem.img.formats.small.url} />
   </Seo>
   )
 
