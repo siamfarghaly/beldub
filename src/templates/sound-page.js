@@ -109,6 +109,10 @@ export const query = graphql`
   }
 `
 
-export const Head = ({data}) => <Seo title={data.strapiSoundsystem.name} />
+export const Head = ({data}) => (
+  <Seo title={data.strapiSoundsystem.name}>
+    <meta name="og:image" content="../logo-beldub.png" />
+  </Seo>
+  )
 
 export default SoundPage
