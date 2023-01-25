@@ -37,6 +37,7 @@ function Seo({ description, title, children }) {
       <meta name="twitter:creator" content={site.siteMetadata?.author || ``} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={metaDescription} />
+      <meta name="og:image" content={"../logo-beldub.png"} />
       <meta name="image" content={"../logo-beldub.png"} />
       {children}
     </>
