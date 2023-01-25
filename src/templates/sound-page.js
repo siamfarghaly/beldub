@@ -39,7 +39,7 @@ const SoundPage = ({data}) => {
           {other !== null && <a href={other}><img style={{filter:'invert(1)', height:'40px'}} src={'/web.png'} alt="web-icon" /></a>}
           {city !== null && <h2 style={{ textAlign:'left',margin:'0', color:'var(--color-black'}}>From: {city}</h2>}
           {year !== null && <h2 style={{  textAlign:'left',margin:'0', color:'var(--color-black'}}>Since: {year}</h2>}
-          <h2 style={{  textAlign:'left',margin:'0', color:'var(--color-black'}}>Upcoming Events:</h2>
+          {filteredEvents.length !== 0 && <h2 style={{  textAlign:'left',margin:'0', color:'var(--color-black'}}>Upcoming Events:</h2>}
           <div className="eventBox" style={{display:"grid",
   gridTemplateColumns: "repeat( auto-fit, minmax(300px, 1fr) )",
   gridGap:"30px"}}>

@@ -121,7 +121,8 @@ const Soundsystems = props => {
           sounds.map((sound, index) => {
             
               return(
-                <div className="soundCard" key={index} style={{ height:'360px',backgroundColor:"white",
+                <div className="soundCard" key={index} style={{ 
+                  height:'360px',
                   backgroundColor:"var(--color-text)",
                   padding:"var(--space-1)",
                   borderRadius:"4px",
