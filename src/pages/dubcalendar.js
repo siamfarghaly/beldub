@@ -80,7 +80,7 @@ const Dubcalendar = props => {
           type="text"
           style={{paddingLeft:'var(--space-3)',borderRadius:'4px',fontSize:'var(--font-lg)',width:'100%',height:'var(--space-6)'}}
           aria-label="Search"
-          placeholder="For example `Buda BXL` ,`Kingstep` or 'Festival'..."
+          placeholder="E.g. `Buda BXL` ,`Kingstep` or 'Festival'..."
           onChange={handleInputChange}
         />
       </div>

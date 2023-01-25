@@ -87,7 +87,7 @@ const Blog = props => {
           type="text"
           style={{paddingLeft:'var(--space-3)',borderRadius:'4px',fontSize:'var(--font-lg)',width:'100%',height:'var(--space-6)'}}
           aria-label="Search"
-          placeholder="For example `King Alpha`,`Interview` or `Youth & Truth`..."
+          placeholder="E.g. `King Alpha`,`Interview` or `Youth & Truth`..."
           onChange={handleInputChange}
         />
       </div>

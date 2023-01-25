@@ -87,7 +87,7 @@ const Soundsystems = props => {
           type="text"
           style={{paddingLeft:'var(--space-3)',borderRadius:'4px',fontSize:'var(--font-lg)',width:'100%',height:'var(--space-6)'}}
           aria-label="Search"
-          placeholder="For example `Gent` ,`Ionyouth` or `2018`..."
+          placeholder="E.g. `Gent` ,`Ionyouth` or `2018`..."
           onChange={handleInputChange}
         />
       </div>
