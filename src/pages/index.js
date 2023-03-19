@@ -25,7 +25,7 @@ const IndexPage = props => {
       
     </div>
      <div style={{height:'68vh',display:'flex', flexDirection:'column', justifyContent:'space-between', marginBottom:'12vh'}}>
-     <h1 style={{fontSize:'2.5rem',textAlign:'center'}}>
+     <h1 style={{fontSize:'2.5rem',textAlign:'center', color:'var(--color-white)'}}>
         The platform that brings you reports of everything <b>dubbing in Belgium.</b>
       </h1>
       <a href="https://vimeo.com/201431711" className="actionButton" style={{padding:'1rem',textAlign:'center',textDecoration:'none',cursor:'pointer',boxShadow:"4px 6px 5px var(--color-blue)", margin:'0 auto',width:'300px',color:'var(--color-primary)', border:'2px solid var(--color-primary)',borderRadius:'4px',backgroundColor:'#161615', height:'65px'}}>

@@ -83,7 +83,7 @@ const Header = ({ siteTitle }) => (
 
           }}
         >
-          About
+          Team
         </Link></li>
       </ul>
     </section>

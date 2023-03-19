@@ -63,8 +63,8 @@ const Dubcalendar = props => {
        let hours        = dateCode.substring(9,11);
        let minutes       = dateCode.substring(11,13);
        let date        = new Date(year, month-1, day, hours, minutes);
-       let dateString = date.toDateString();
-       return dateString;
+      //  let dateString = date.toDateString();
+       return (date);
 
      }
   return(
@@ -91,26 +91,50 @@ const Dubcalendar = props => {
         {
           dubEvents.reverse().map((dubEvent, index) => {
             
-              return(
-                <div className="eventCard" key={index} style={{ backgroundColor:"white",
-                  color:"var(--color-black)",
-                  padding:"10px",
-                  borderRadius:"4px",
-                  boxShadow:"4px 6px 5px var(--color-blue)",
-                  maxWidth:"600px"}}>
-                  <a href={dubEvent.URL} style={{textDecoration:"none"}}>
-                    <h3 className="eventTitle"style={{margin:"0", height:"80px"}}> <b>{dubEvent.SUMMARY}</b> </h3>
-                    <div style={{color:'var(--color-black)', textAlign:"left"}}> {formatDate(dubEvent.DTSTART)}<br/>
-                    {dubEvent.LOCATION}</div>
-                    
-                  </a>
-                 
-                  {/* <p>{dubEvent.DESCRIPTION}</p>  */}
-                  
-                </div>
-              )
+              if (formatDate(dubEvent.DTSTART) > new Date()){
+                if(formatDate(dubEvent.DTSTART).getTime() < new Date().getTime() + 604800000 ){
+                  return(
+                    <div className="eventCard" key={index} style={{ backgroundColor:"var(--color-black)",
+                      color:"var(--color-white)",
+                      padding:"10px",
+                      borderRadius:"4px",
+                      boxShadow:"4px 6px 5px var(--color-blue)",
+                      maxWidth:"600px",
+                      border:"2px solid var(--color-primary)"}}>
+                      <a href={dubEvent.URL} style={{textDecoration:"none"}}>
+                        <h3 className="eventTitle"style={{margin:"0", height:"80px"}}> <b>{dubEvent.SUMMARY}</b> </h3>
+                        <div style={{color:'var(--color-white)', textAlign:"left"}}> {formatDate(dubEvent.DTSTART).toDateString()}<br/>
+                        {dubEvent.LOCATION}</div>
+                        
+                      </a>
+                     
+                      {/* <p>{dubEvent.DESCRIPTION}</p>  */}
+                      
+                    </div>
+                  )
+                } else {
+                  return(
+                    <div className="eventCard" key={index} style={{ backgroundColor:"white",
+                      color:"var(--color-black)",
+                      padding:"10px",
+                      borderRadius:"4px",
+                      boxShadow:"4px 6px 5px var(--color-blue)",
+                      maxWidth:"600px",
+                      border:"2px solid var(--color-primary)"}}>
+                      <a href={dubEvent.URL} style={{textDecoration:"none"}}>
+                        <h3 className="eventTitle"style={{margin:"0", height:"80px"}}> <b>{dubEvent.SUMMARY}</b> </h3>
+                        <div style={{color:'var(--color-black)', textAlign:"left"}}> {formatDate(dubEvent.DTSTART).toDateString()}<br/>
+                        {dubEvent.LOCATION}</div>
+                        
+                      </a>
+                     
+                      {/* <p>{dubEvent.DESCRIPTION}</p>  */}
+                      
+                    </div>
+                  )
+                }
             
-          })
+          }})
         }
       </div>    
     </Layout>

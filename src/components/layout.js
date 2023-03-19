@@ -64,7 +64,7 @@ const Layout = ({ children }) => {
           }}
         >
           <div style={{ height:'2px', margin:'auto',maxWidth:'400px', backgroundColor:'var(--color-primary)'}}></div>
-          <h2 style={{marginTop:'var(--space-3)', marginBottom:'var(--space-2)'}}>Find BelDUB on Social Media:</h2>
+          <h2 style={{marginTop:'var(--space-3)',color:'var(--color-white)', marginBottom:'var(--space-2)'}}>Find BelDUB on Social Media:</h2>
           <div >
             <a href={socials[0].url}><img style={{marginRight:'var(--space-2)',height:'40px'}} src={'/yt.png'} alt="youtube-icon" /></a>
             <a href={socials[1].url}><img style={{marginRight:'var(--space-2)',height:'40px'}} src={'/insta.png'} alt="insta-icon" /></a>
@@ -73,9 +73,11 @@ const Layout = ({ children }) => {
           </div>
           
 
-          Beldub © {new Date().getFullYear()} &middot; Site by
-          {` `}
-          <a href="https://www.linkedin.com/in/siam-farghaly/">Siam Farghaly</a>
+          <div style={{color:'var(--color-white)'}}>
+            Beldub © {new Date().getFullYear()} &middot; Site by
+            {` `}
+            <a href="https://www.siamfarghaly.com/">Siam</a>
+          </div>
         </footer>
     </>
   )

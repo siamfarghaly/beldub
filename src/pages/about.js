@@ -5,9 +5,9 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
-const About = () => (
+const Team = () => (
   <Layout>
-    <h1 style={{marginBottom:'var(--space-3)'}}>About <b>BelDUB</b></h1>
+    <h1 style={{marginBottom:'var(--space-3)'}}>BelDUB <b>Team</b></h1>
     <Link to="/">Back Home</Link>
     <div style={{marginTop:'var(--space-3)',display:'grid',  gridTemplateColumns: "repeat( auto-fit, minmax(300px, 1fr) )", gridGap:"30px"}}>
       <img style={{borderRadius:'4px'}} alt="Andreas from Beldub taking an interview with King Earthquake" src="../beldub-during-interview.jpeg" />
@@ -22,10 +22,10 @@ Team BelDUB is here for you to report on all things dubbing in Belgium, pushing 
 )
 
 export const Head = () => (
-  <Seo title="About">
+  <Seo title="BelDUB Team">
     <meta property="og:image" content="../beldub-during-interview.jpeg" />
     <meta name="image" content="../beldub-during-interview.jpeg" />
   </Seo>
 )
 
-export default About
+export default Team

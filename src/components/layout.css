@@ -2,8 +2,9 @@
 
 :root {
   --border-radius: 4px;
-  --color-text: #ffffff;
+  --color-text: #1d1d1b;
   --color-black: #1d1d1b;
+  --color-white: #ffffff;
   --color-primary: #90caa2;
   --color-yellow: #ffdb51;
   --color-blue: #547f8c;
@@ -34,7 +35,8 @@
   --size-gap: var(--space-6);
 }
 html {
-  background-color: #161615;
+  /* background-color: #161615; */
+  background-color: #ffffff;
   -webkit-text-size-adjust: 100%;
   box-sizing: border-box;
   font: sans-serif;

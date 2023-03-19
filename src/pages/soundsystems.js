@@ -92,7 +92,7 @@ const Soundsystems = props => {
         />
       </div>
       
-      <MapContainer style={{ borderRadius:'4px', height: '400px'}} center={[50.70538598041358, 4.494414422841746]} dragging={false} zoom={7}>
+      <MapContainer style={{ borderRadius:'4px', height: '400px'}} center={[50.70538598041358, 4.494414422841746]} dragging={true} zoom={7}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://api.maptiler.com/maps/basic-v2/{z}/{x}/{y}.png?key=TSXhCTpRTaXUw3cJHU0A"
@@ -123,11 +123,11 @@ const Soundsystems = props => {
               return(
                 <div className="soundCard" key={index} style={{ 
                   height:'360px',
-                  backgroundColor:"var(--color-text)",
+                  backgroundColor:"var(--color-white)",
                   padding:"var(--space-1)",
                   borderRadius:"4px",
-                  border:'1px solid var(--color-primary)',
-                  boxShadow:"4px 6px 5px var(--color-primary)",
+                  border:'2px solid var(--color-primary)',
+                  boxShadow:"4px 6px 5px var(--color-blue)",
                   maxWidth:"600px"}}>
                   <Link to={sound.slug} style={{color:'inherit',textDecoration:"inherit"}}>
                     <div style={{height:'70px',display:'flex', flexDirection:'column', justifyContent:'center'}}>
