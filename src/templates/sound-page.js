@@ -23,8 +23,8 @@ const SoundPage = ({data}) => {
     let hours        = dateCode.substring(9,11);
     let minutes       = dateCode.substring(11,13);
     let date        = new Date(year, month-1, day, hours, minutes);
-    let dateString = date.toDateString();
-    return dateString;
+    // let dateString = date.toDateString();
+    return (date);
 
   };
   return(
@@ -45,27 +45,28 @@ const SoundPage = ({data}) => {
   gridGap:"30px"}}>
         {
           filteredEvents.reverse().map((soundEvent, index) => {
-            
-              return(
-                <div className="eventCard" key={index} style={{ backgroundColor:"var(--color-white)",
-                  color:"var(--color-black)",
-                  padding:"10px",
-                  borderRadius:"4px",
-                  border:"2px solid var(--color-primary)",
-                  boxShadow:"4px 6px 5px var(--color-blue)",
-                  maxWidth:"600px"}}>
-                  <a href={soundEvent.URL} style={{textDecoration:"none"}}>
-                    <h3 className="eventTitle"style={{margin:"0", height:"80px"}}> <b>{soundEvent.SUMMARY}</b> </h3>
-                    <div style={{color:'var(--color-black)', textAlign:"left"}}> {formatDate(soundEvent.DTSTART)}<br/>
-                    {soundEvent.LOCATION}</div>
+            if (formatDate(soundEvent.DTSTART) > new Date()){
+                return(
+                  <div className="eventCard" key={index} style={{ backgroundColor:"var(--color-white)",
+                    color:"var(--color-black)",
+                    padding:"10px",
+                    borderRadius:"4px",
+                    border:"2px solid var(--color-primary)",
+                    boxShadow:"4px 6px 5px var(--color-blue)",
+                    maxWidth:"600px"}}>
+                    <a href={soundEvent.URL} style={{textDecoration:"none"}}>
+                      <h3 className="eventTitle"style={{margin:"0", height:"80px"}}> <b>{soundEvent.SUMMARY}</b> </h3>
+                      <div style={{color:'var(--color-black)', textAlign:"left"}}> {formatDate(soundEvent.DTSTART).toDateString()}<br/>
+                      {soundEvent.LOCATION}</div>
+                      
+                    </a>
+                   
+                    {/* <p>{soundEvent.DESCRIPTION}</p>  */}
                     
-                  </a>
-                 
-                  {/* <p>{soundEvent.DESCRIPTION}</p>  */}
-                  
-                </div>
-              )
-            
+                  </div>
+                )
+              
+            }
           })
         }
       </div>
