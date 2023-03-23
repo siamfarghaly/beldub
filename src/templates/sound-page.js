@@ -37,9 +37,9 @@ const SoundPage = ({data}) => {
           {fb !== null && <a href={fb}><img style={{marginRight:'var(--space-2)',height:'40px'}} src={'/fb.png'} alt="fb-icon" /></a>}
           {insta !== null && <a href={insta}><img style={{height:'40px'}} src={'/insta.png'} alt="insta-icon" /></a>}
           {other !== null && <a href={other}><img style={{height:'40px'}} src={'/web.png'} alt="web-icon" /></a>}
-          {city !== null && <h2 style={{ textAlign:'left',margin:'0', color:'var(--color-black'}}>From: {city}</h2>}
-          {year !== null && <h2 style={{  textAlign:'left',margin:'0', color:'var(--color-black'}}>Since: {year}</h2>}
-          {filteredEvents.length !== 0 && <h2 style={{  textAlign:'left',margin:'0', color:'var(--color-black'}}>Upcoming Events:</h2>}
+          {city !== null && <h2 style={{ textAlign:'left',margin:'0', color:'var(--color-white'}}>From: {city}</h2>}
+          {year !== null && <h2 style={{  textAlign:'left',margin:'0', color:'var(--color-white'}}>Since: {year}</h2>}
+          {filteredEvents.length !== 0 && <h2 style={{  textAlign:'left',margin:'0', color:'var(--color-white'}}>Upcoming Events:</h2>}
           <div className="eventBox" style={{display:"grid",
   gridTemplateColumns: "repeat( auto-fit, minmax(300px, 1fr) )",
   gridGap:"30px"}}>
