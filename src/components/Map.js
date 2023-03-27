@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, graphql, useStaticQuery } from "gatsby"
 import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
+import MarkerClusterGroup from 'react-leaflet-cluster';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
@@ -111,25 +112,28 @@ export default function Map() {
                 />
             </div>
             <div className="map__container">
-                <MapContainer style={{ borderRadius: '4px', height: '400px' }} center={[50.70538598041358, 4.494414422841746]} dragging={true} zoom={7}>
-                    <TileLayer
-                        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                        url="https://api.maptiler.com/maps/basic-v2/{z}/{x}/{y}.png?key=TSXhCTpRTaXUw3cJHU0A"
-                    />
-                    {sounds.map((sound, i) => (
-                        <Marker key={i} position={[sound.lat, sound.long]} icon={svgIcon}>
-                            <Popup>
-                                <Link to={sound.slug} style={{ color: 'inherit', textDecoration: "inherit" }}>
-                                    <div style={{ textAlign: 'center' }}>
-                                        <GatsbyImage style={{ borderRadius: '4px' }} image={getImage(sound.img.localFile.childImageSharp.gatsbyImageData)} alt={sound.slug} />
-                                        <p><b>{sound.name}</b><br /> from {sound.city} <br /> {sound.year}</p>
-                                    </div>
-                                </Link>
+                <MapContainer style={{ borderRadius: '4px', height: '400px' }} center={[50.70538598041358, 4.494414422841746]} dragging={true} zoom={7} maxZoom={20}>
+                    <MarkerClusterGroup
+                    chunkedLoading
+                    >
+                        <TileLayer
+                            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                            url="https://api.maptiler.com/maps/basic-v2/{z}/{x}/{y}.png?key=TSXhCTpRTaXUw3cJHU0A"
+                        />
+                        {sounds.map((sound, i) => (
+                            <Marker key={i} position={[sound.lat, sound.long]} icon={svgIcon}>
+                                <Popup>
+                                    <Link to={sound.slug} style={{ color: 'inherit', textDecoration: "inherit" }}>
+                                        <div style={{ textAlign: 'center' }}>
+                                            <GatsbyImage style={{ borderRadius: '4px' }} image={getImage(sound.img.localFile.childImageSharp.gatsbyImageData)} alt={sound.slug} />
+                                            <p><b>{sound.name}</b><br /> from {sound.city} <br /> {sound.year}</p>
+                                        </div>
+                                    </Link>
 
-                            </Popup>
-                        </Marker>
-                    ))}
-
+                                </Popup>
+                            </Marker>
+                        ))}
+                    </MarkerClusterGroup>
                 </MapContainer>
             </div>
             <div className="soundBox" style={{
