@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, graphql, useStaticQuery } from "gatsby"
-import { MapContainer, Marker, Popup, TileLayer } from 'react-leaflet';
+import { MapContainer, Marker, Popup } from 'react-leaflet';
+import VectorTileLayer from 'react-leaflet-vector-tile-layer';
 import MarkerClusterGroup from 'react-leaflet-cluster';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
@@ -116,10 +117,11 @@ export default function Map() {
                     <MarkerClusterGroup
                     chunkedLoading
                     >
-                        <TileLayer
-                            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                            url="https://api.maptiler.com/maps/basic-v2/{z}/{x}/{y}.png?key=TSXhCTpRTaXUw3cJHU0A"
-                        />
+                        <VectorTileLayer
+                            styleUrl="https://api.maptiler.com/maps/d1978af7-1fc3-48b1-93b3-223cc990e712/style.json?key=TSXhCTpRTaXUw3cJHU0A"
+                            // attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                            // url="https://api.maptiler.com/maps/d1978af7-1fc3-48b1-93b3-223cc990e712/{z}/{x}/{y}.png?key=TSXhCTpRTaXUw3cJHU0A"
+                        /> 
                         {sounds.map((sound, i) => (
                             <Marker key={i} position={[sound.lat, sound.long]} icon={svgIcon}>
                                 <Popup>
