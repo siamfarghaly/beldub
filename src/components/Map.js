@@ -115,7 +115,7 @@ export default function Map() {
             <div className="map__container">
                 <MapContainer style={{ borderRadius: '4px', height: '400px' }} center={[50.70538598041358, 4.494414422841746]} dragging={true} zoom={7} maxZoom={20}>
                     <MarkerClusterGroup
-                    chunkedLoading
+                    chunkedLoading maxClusterRadius={30}
                     >
                         <VectorTileLayer
                             styleUrl="https://api.maptiler.com/maps/d1978af7-1fc3-48b1-93b3-223cc990e712/style.json?key=TSXhCTpRTaXUw3cJHU0A"
