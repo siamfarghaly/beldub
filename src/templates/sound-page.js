@@ -11,10 +11,21 @@ const SoundPage = ({data}) => {
   const allEvents = json.VCALENDAR[0].VEVENT;
   const filteredEvents = allEvents.filter(dubEvent => {
     const { SUMMARY, DESCRIPTION} = dubEvent
-    return (
-      SUMMARY.toLowerCase().includes(name.toLowerCase()) ||
-      DESCRIPTION.toLowerCase().includes(name.toLowerCase())
-    )
+    if (name.toLowerCase().includes("soundsystem")){
+      return (
+        SUMMARY.toLowerCase().includes(name.slice(0,-11).toLowerCase()) ||
+        SUMMARY.toLowerCase().includes(name.replace(/-/g,' ').slice(0,-11).toLowerCase()) ||
+        DESCRIPTION.toLowerCase().includes(name.slice(0,-11).toLowerCase()) ||
+        DESCRIPTION.toLowerCase().includes(name.replace(/-/g,' ').slice(0,-11).toLowerCase())
+      )
+    } else {
+      return (
+        SUMMARY.toLowerCase().includes(name.toLowerCase()) ||
+        SUMMARY.toLowerCase().includes(name.replace(/-/g,' ').toLowerCase()) ||
+        DESCRIPTION.toLowerCase().includes(name.toLowerCase()) ||
+        DESCRIPTION.toLowerCase().includes(name.replace(/-/g,' ').toLowerCase())
+      )
+    }
   });
   function formatDate(dateCode){
     let year        = dateCode.substring(0,4);

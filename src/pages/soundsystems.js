@@ -1,14 +1,13 @@
-import React, { useState } from "react"
-import { Link , graphql } from "gatsby"
+import React from "react"
+import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import MapWrapper from "../components/MapWrapper"
 
 
 
-const Soundsystems = props => {
+const Soundsystems = () => {
   
   // const data = useStaticQuery(graphql`
   //   query SoundsystemQuery {
@@ -37,48 +36,49 @@ const Soundsystems = props => {
   // `)
 
 
-  const { data } = props
-  const allSounds = data.allStrapiSoundsystem.nodes
+  // const { data } = props
+  // const allSounds = data.allStrapiSoundsystem.nodes
 
-  const emptyQuery = ""
+  // const emptyQuery = ""
 
-  const [state, setState] = useState({
-    filteredData: [],
-    query: emptyQuery,
-  })
+  // const [state, setState] = useState({
+  //   filteredData: [],
+  //   query: emptyQuery,
+  // })
 
-  const handleInputChange = event => {
-    console.log(event.target.value)
-    const query = event.target.value
-    const { data } = props
+  // const handleInputChange = event => {
+  //   console.log(event.target.value)
+  //   const query = event.target.value
+  //   const { data } = props
 
-    const sounds = data.allStrapiSoundsystem.nodes || []
+  //   const sounds = data.allStrapiSoundsystem.nodes || []
 
-    const filteredData = sounds.filter(sound => {
-      const { name, city, year} = sound
-      return (
-        name.toLowerCase().includes(query.toLowerCase()) ||
-        (year==query) ||
-        city.toLowerCase().includes(query.toLowerCase())
-      )
-    })
+  //   const filteredData = sounds.filter(sound => {
+  //     const { name, city, year} = sound
+  //     return (
+  //       name.toLowerCase().includes(query.toLowerCase()) ||
+  //       (year==query) ||
+  //       city.toLowerCase().includes(query.toLowerCase())
+  //     )
+  //   })
 
-    setState({
-      query,
-      filteredData,
-    })
-  }
+  //   setState({
+  //     query,
+  //     filteredData,
+  //   })
+  // }
 
-  const { filteredData, query } = state
-  const hasSearchResults = filteredData && query !== emptyQuery
-  const sounds = hasSearchResults ? filteredData : allSounds
+  // const { filteredData, query } = state
+  // const hasSearchResults = filteredData && query !== emptyQuery
+  // const sounds = hasSearchResults ? filteredData : allSounds
 
   return (
     
     <Layout>
       <h1 style={{marginBottom:'var(--space-3)'}}>The <b>Belgian Reggae Soundsystem</b> List</h1>
       <Link to="/">Back Home</Link>
-      <div className="searchBox" style={{marginBottom:'var(--space-3)',marginTop:'var(--space-3)'}}>
+      <MapWrapper />
+      {/* <div className="searchBox" style={{marginBottom:'var(--space-3)',marginTop:'var(--space-3)'}}>
         <label style={{fontSize:'var(--font-lg)',fontWeight:'var(--font-bold)'}}htmlFor="search">🔎 Search: </label>
         <input
           
@@ -91,8 +91,8 @@ const Soundsystems = props => {
           onChange={handleInputChange}
         />
       </div>
-      
-      <MapContainer style={{ borderRadius:'4px', height: '400px'}} center={[50.70538598041358, 4.494414422841746]} dragging={true} zoom={7}>
+       */}
+      {/* <MapContainer style={{ borderRadius:'4px', height: '400px'}} center={[50.70538598041358, 4.494414422841746]} dragging={true} zoom={7}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://api.maptiler.com/maps/basic-v2/{z}/{x}/{y}.png?key=TSXhCTpRTaXUw3cJHU0A"
@@ -111,9 +111,9 @@ const Soundsystems = props => {
           </Marker>
         ))}
         
-      </MapContainer>
+      </MapContainer> */}
       
-      <div className="soundBox" style={{display:"grid",
+      {/* <div className="soundBox" style={{display:"grid",
   gridTemplateColumns: "repeat( auto-fit, minmax(215px, 1fr) )",
   gridGap:"30px",
   marginTop:"var(--space-3)"}}>
@@ -144,7 +144,7 @@ const Soundsystems = props => {
             
           })
         }
-        </div>
+        </div> */}
     </Layout>
       )
   
@@ -158,28 +158,28 @@ export const Head = () => (
 )
 
 export default Soundsystems
-export const pageQuery = graphql`
-query {
-  allStrapiSoundsystem(sort: {name: ASC}) {
-    nodes {
-      name
-      slug
-      year
-      lat
-      long
-      city
-      fb
-      insta
-      other
-      img {
-        url
-        localFile {
-          childImageSharp {
-            gatsbyImageData
-          }
-        }
-      }
-    }
-  }
-}
-`
+// export const pageQuery = graphql`
+// query {
+//   allStrapiSoundsystem(sort: {name: ASC}) {
+//     nodes {
+//       name
+//       slug
+//       year
+//       lat
+//       long
+//       city
+//       fb
+//       insta
+//       other
+//       img {
+//         url
+//         localFile {
+//           childImageSharp {
+//             gatsbyImageData
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+// `
