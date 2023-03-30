@@ -74,7 +74,7 @@ const Soundsystems = (props) => {
   return (
     
     <Layout>
-      <h1 style={{marginBottom:'var(--space-3)'}}>The <b>Belgian Reggae Soundsystems</b> List ({soundsLength})</h1>
+      <h1 style={{marginBottom:'var(--space-3)'}}>The <b>Belgian Reggae Soundsystem</b> Family <b>({soundsLength})</b></h1>
       <Link to="/">Back Home</Link>
       <MapWrapper />
       {/* <div className="searchBox" style={{marginBottom:'var(--space-3)',marginTop:'var(--space-3)'}}>
