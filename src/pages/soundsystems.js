@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -7,7 +7,7 @@ import MapWrapper from "../components/MapWrapper"
 
 
 
-const Soundsystems = () => {
+const Soundsystems = (props) => {
   
   // const data = useStaticQuery(graphql`
   //   query SoundsystemQuery {
@@ -35,9 +35,8 @@ const Soundsystems = () => {
   //   }
   // `)
 
-
-  // const { data } = props
-  // const allSounds = data.allStrapiSoundsystem.nodes
+  const { data } = props;
+  const soundsLength = data.allStrapiSoundsystem.totalCount
 
   // const emptyQuery = ""
 
@@ -75,7 +74,7 @@ const Soundsystems = () => {
   return (
     
     <Layout>
-      <h1 style={{marginBottom:'var(--space-3)'}}>The <b>Belgian Reggae Soundsystem</b> List</h1>
+      <h1 style={{marginBottom:'var(--space-3)'}}>The <b>Belgian Reggae Soundsystems</b> List ({soundsLength})</h1>
       <Link to="/">Back Home</Link>
       <MapWrapper />
       {/* <div className="searchBox" style={{marginBottom:'var(--space-3)',marginTop:'var(--space-3)'}}>
@@ -158,28 +157,10 @@ export const Head = () => (
 )
 
 export default Soundsystems
-// export const pageQuery = graphql`
-// query {
-//   allStrapiSoundsystem(sort: {name: ASC}) {
-//     nodes {
-//       name
-//       slug
-//       year
-//       lat
-//       long
-//       city
-//       fb
-//       insta
-//       other
-//       img {
-//         url
-//         localFile {
-//           childImageSharp {
-//             gatsbyImageData
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
-// `
+export const pageQuery = graphql`
+  query {
+    allStrapiSoundsystem {
+      totalCount
+    }
+  }
+`
