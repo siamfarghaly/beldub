@@ -7,7 +7,6 @@
 
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-
 import Header from "./header"
 import "./layout.css"
 
@@ -51,34 +50,31 @@ const Layout = ({ children }) => {
         }}
       >
         <main>{children}</main>
-        
       </div>
       <footer
-          style={{
-            padding:'var(--space-5)',
-            marginTop: `var(--space-5)`,
-            fontSize: `var(--font-sm)`,
-            textAlign:'center',
-            width: '100%',
-            backgroundColor: 'var(--color-black)'
-          }}
-        >
-          <div style={{ height:'2px', margin:'auto',maxWidth:'400px', backgroundColor:'var(--color-primary)'}}></div>
-          <h2 style={{marginTop:'var(--space-3)',color:'var(--color-white)', marginBottom:'var(--space-2)'}}>Find BelDUB on Social Media:</h2>
-          <div >
-            <a href={socials[0].url}><img style={{marginRight:'var(--space-2)',height:'40px'}} src={'/yt.png'} alt="youtube-icon" /></a>
-            <a href={socials[1].url}><img style={{marginRight:'var(--space-2)',height:'40px'}} src={'/insta.png'} alt="insta-icon" /></a>
-            <a href={socials[2].url}><img style={{marginRight:'var(--space-2)',height:'40px'}} src={'/fb.png'} alt="fb-icon" /></a>
-            <a href={socials[3].url}><img style={{marginRight:'var(--space-2)',height:'40px'}} src={'/tiktok.png'} alt="tiktok-icon" /></a>
-          </div>
-          
-
-          <div style={{color:'var(--color-white)'}}>
-            Beldub © {new Date().getFullYear()} &middot; Site by
-            {` `}
-            <a href="https://www.siamfarghaly.com/">Siam</a>
-          </div>
-        </footer>
+        style={{
+          padding: 'var(--space-5)',
+          marginTop: `var(--space-5)`,
+          fontSize: `var(--font-sm)`,
+          textAlign: 'center',
+          width: '100%',
+          backgroundColor: 'var(--color-black)'
+        }}
+      >
+        <div style={{ height: '2px', margin: 'auto', maxWidth: '400px', backgroundColor: 'var(--color-primary)' }}></div>
+        <h2 style={{ marginTop: 'var(--space-3)', color: 'var(--color-white)', marginBottom: 'var(--space-2)' }}>Find BelDUB on Social Media:</h2>
+        <div >
+          <a href={socials[0].url}><img style={{ marginRight: 'var(--space-2)', height: '40px' }} src={'/yt.png'} alt="youtube-icon" /></a>
+          <a href={socials[1].url}><img style={{ marginRight: 'var(--space-2)', height: '40px' }} src={'/insta.png'} alt="insta-icon" /></a>
+          <a href={socials[2].url}><img style={{ marginRight: 'var(--space-2)', height: '40px' }} src={'/fb.png'} alt="fb-icon" /></a>
+          <a href={socials[3].url}><img style={{ marginRight: 'var(--space-2)', height: '40px' }} src={'/tiktok.png'} alt="tiktok-icon" /></a>
+        </div>
+        <div style={{ color: 'var(--color-white)' }}>
+          Beldub © {new Date().getFullYear()} &middot; Site by
+          {` `}
+          <a href="https://www.siamfarghaly.com/">Siam</a>
+        </div>
+      </footer>
     </>
   )
 }

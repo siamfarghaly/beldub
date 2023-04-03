@@ -1,10 +1,10 @@
-
 h2 {
   vertical-align: center;
   text-align: center;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   height: 100%;
 }
@@ -12,15 +12,17 @@ html, body {
 * {
   box-sizing: border-box;
 }
-header{
+
+header {
   background-color: var(--color-black);
 }
+
 .top-nav {
-    text-decoration: none;
+  text-decoration: none;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content:space-between;
+  justify-content: space-between;
   background-color: #00BAF0;
   background: var(--color-black);
   color: #FFF;
@@ -39,7 +41,7 @@ header{
   padding: 0;
 }
 
-.menu > li {
+.menu>li {
   margin: 0 1rem;
   overflow: hidden;
 }
@@ -80,34 +82,37 @@ header{
   margin-top: 8px;
 }
 
-#menu-toggle:checked + .menu-button-container .menu-button::before {
+#menu-toggle:checked+.menu-button-container .menu-button::before {
   margin-top: 0px;
   transform: rotate(405deg);
 }
 
-#menu-toggle:checked + .menu-button-container .menu-button {
+#menu-toggle:checked+.menu-button-container .menu-button {
   background: rgba(255, 255, 255, 0);
 }
 
-#menu-toggle:checked + .menu-button-container .menu-button::after {
+#menu-toggle:checked+.menu-button-container .menu-button::after {
   margin-top: 0px;
   transform: rotate(-405deg);
 }
 
 @media (max-width: 700px) {
 
-    .logo{
-        position: absolute;
-        left: calc(50% - 30px);
-    }
-    .top-nav{
-        justify-content:flex-end;
-    }
+  .logo {
+    position: absolute;
+    left: calc(50% - 30px);
+  }
+
+  .top-nav {
+    justify-content: flex-end;
+  }
+
   .menu-button-container {
     display: flex;
   }
+
   .menu {
-    position:absolute;
+    position: absolute;
     top: 0;
     margin-top: 75px;
     left: 0;
@@ -118,26 +123,28 @@ header{
     z-index: 1000;
 
   }
-  #menu-toggle ~ .menu li {
+
+  #menu-toggle~.menu li {
     height: 0;
     margin: 0;
     padding: 0;
     border: 0;
     transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
   }
-  #menu-toggle:checked ~ .menu li {
+
+  #menu-toggle:checked~.menu li {
     border: 1px solid #333;
     height: 4em;
     padding: 1.1em;
     transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
   }
 
-  #menu-toggle:checked ~ .menu li .menuLink{
+  #menu-toggle:checked~.menu li .menuLink {
     width: 100%;
-    text-align:center ;
+    text-align: center;
   }
 
-  .menu > li {
+  .menu>li {
     display: flex;
     justify-content: center;
     margin: 0;
@@ -146,7 +153,8 @@ header{
     color: white;
     background-color: #222;
   }
-  .menu > li:not(:last-child) {
+
+  .menu>li:not(:last-child) {
     border-bottom: 1px solid #444;
   }
 }
