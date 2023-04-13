@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 
 
-const Dubcalendar = props => {
+const Events = props => {
 
   const { data } = props
   let json = JSON.parse(data.allStrapiEventcalendar.nodes[0].content);
@@ -120,13 +120,13 @@ const Dubcalendar = props => {
 }
 
 export const Head = () => (
-  <Seo title="Dubcalendar">
+  <Seo title="Events">
     <meta property="og:image" content="../events-cover.jpg" />
     <meta name="image" content="../events-cover.jpg" />
   </Seo>
 )
 
-export default Dubcalendar
+export default Events
 
 export const pageQuery = graphql`
 query {

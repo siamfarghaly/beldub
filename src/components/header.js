@@ -47,7 +47,7 @@ const Header = ({ siteTitle }) => (
         </li>
         <li><Link
           className="menuLink"
-          to="/dubcalendar"
+          to="/events"
           style={{
             fontSize: `var(--font-lg)`,
             textDecoration: `none`,

@@ -64,7 +64,7 @@ const SoundPage = ({ data }) => {
                       borderRadius: "4px",
                       border: "2px solid var(--color-primary)",
                       boxShadow: "4px 6px 5px var(--color-blue)",
-                      maxWidth: "600px"
+                      maxWidth: "100%"
                     }}>
                       <a href={soundEvent.URL} style={{ textDecoration: "none" }}>
                         <h3 className="eventTitle" style={{ margin: "0", height: "80px" }}> <b>{soundEvent.SUMMARY}</b> </h3>
@@ -79,7 +79,7 @@ const SoundPage = ({ data }) => {
             }
           </div>
         </div>
-        <GatsbyImage image={getImage(img.localFile.childImageSharp.gatsbyImageData)} alt={slug} />
+        <GatsbyImage style={{maxWidth:'100%'}} image={getImage(img.localFile.childImageSharp.gatsbyImageData)} alt={slug} />
       </div>
     </Layout>
   )

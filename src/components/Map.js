@@ -107,7 +107,7 @@ export default function Map() {
                     onChange={handleInputChange}
                 />
             </div>
-            <div className="map__container">
+            <div className="map__container custom-popup">
                 <MapContainer style={{ borderRadius: '4px', height: '400px' }} center={[50.70538598041358, 4.494414422841746]} dragging={true} zoom={7} maxZoom={20}>
                     <MarkerClusterGroup chunkedLoading maxClusterRadius={30}>
                         <VectorTileLayer
@@ -119,8 +119,8 @@ export default function Map() {
                                 <Popup>
                                     <Link to={sound.slug} style={{ color: 'inherit', textDecoration: "inherit" }}>
                                         <div style={{ textAlign: 'center' }}>
-                                            <GatsbyImage style={{ borderRadius: '4px' }} image={getImage(sound.img.localFile.childImageSharp.gatsbyImageData)} alt={sound.slug} />
-                                            <p><b>{sound.name}</b><br /> from {sound.city} <br /> {sound.year}</p>
+                                            <p style={{lineHeight: '20px', marginBottom: '10px'}}><b style={{ fontSize:'20px', color:'var(--color-primary)'}}>{sound.name}</b><br />{sound.city}<br />{sound.year}</p>
+                                            <GatsbyImage style={{maxHeight:'180', borderRadius: '4px' }} image={getImage(sound.img.localFile.childImageSharp.gatsbyImageData)} alt={sound.slug} />
                                         </div>
                                     </Link>
                                 </Popup>
