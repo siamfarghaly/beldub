@@ -52,7 +52,7 @@ const Events = props => {
 
   return (
     <Layout>
-      <h1 style={{ marginBottom: 'var(--space-3)' }}>Upcoming Dub & Soundsystem <b>Events in Belgium</b></h1>
+      <h1 style={{ marginBottom: 'var(--space-1)' }}>Upcoming Dub & Soundsystem <b>Events in Belgium</b></h1>
       <Link to="/">Back Home</Link>
       <div className="searchBox" style={{ marginBottom: 'var(--space-3)', marginTop: 'var(--space-3)' }}>
         <label style={{ fontSize: 'var(--font-lg)', fontWeight: 'var(--font-bold)' }} htmlFor="search">🔎 Search: </label>

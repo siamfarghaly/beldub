@@ -7,7 +7,7 @@ import Seo from "../components/seo"
 
 const Team = () => (
   <Layout>
-    <h1 style={{marginBottom:'var(--space-3)'}}>BelDUB <b>Team</b></h1>
+    <h1 style={{marginBottom:'var(--space-1)'}}>BelDUB <b>Team</b></h1>
     <Link to="/">Back Home</Link>
     <div style={{marginTop:'var(--space-3)',display:'grid',  gridTemplateColumns: "repeat( auto-fit, minmax(300px, 1fr) )", gridGap:"30px"}}>
       <img style={{borderRadius:'4px'}} alt="Andreas from Beldub taking an interview with King Earthquake" src="../beldub-during-interview.jpeg" />

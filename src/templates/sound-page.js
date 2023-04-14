@@ -39,7 +39,7 @@ const SoundPage = ({ data }) => {
   return (
     <Layout>
       <Link style={{ marginBottom: 'var(--space-1)' }} to="/soundsystems">Go back</Link>
-      <div style={{ boxShadow: "4px 6px 5px var(--color-blue)", color: 'var(--color-primary)', backgroundColor: 'var(--color-text)', borderRadius: '4px', padding: 'var(--space-4)', display: "grid", gridTemplateColumns: "repeat( auto-fit, minmax(300px, 1fr) )", gridGap: "30px", marginTop: "30px" }}>
+      <div style={{ boxShadow: "4px 6px 5px var(--color-blue)", color: 'var(--color-primary)', backgroundColor: 'var(--color-text)', borderRadius: '4px', padding: 'var(--space-4)', display: "grid", gridTemplateColumns: "repeat( auto-fit, minmax(250px, 1fr) )", gridGap: "30px", marginTop: "30px" }}>
         <div>
           <h1 style={{ marginBottom: 'var(--space-1)' }}>{name}</h1>
           {fb !== null && <a href={fb}><img style={{ marginRight: 'var(--space-2)', height: '40px' }} src={'/fb.png'} alt="fb-icon" /></a>}
@@ -50,7 +50,7 @@ const SoundPage = ({ data }) => {
           {filteredEvents.length !== 0 && <h2 style={{ textAlign: 'left', margin: '0', color: 'var(--color-white' }}>Upcoming Events:</h2>}
           <div className="eventBox" style={{
             display: "grid",
-            gridTemplateColumns: "repeat( auto-fit, minmax(300px, 1fr) )",
+            gridTemplateColumns: "repeat( auto-fit, minmax(250px, 1fr) )",
             gridGap: "30px"
           }}>
             {

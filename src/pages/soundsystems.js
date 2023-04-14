@@ -1,20 +1,20 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { Link } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import MapWrapper from "../components/MapWrapper"
 
 
 
-const Soundsystems = (props) => {
+const Soundsystems = () => {
 
-  const { data } = props;
-  const soundsLength = data.allStrapiSoundsystem.totalCount
+
+
 
   return (
     <Layout>
-      <h1 style={{ marginBottom: 'var(--space-3)' }}>The <b>Belgian Reggae Soundsystem</b> Family <b>({soundsLength})</b></h1>
-      <Link to="/">Back Home</Link>
+      {/* <h1 style={{ marginBottom: 'var(--space-1)' }}>The Bel<b>DUB</b> Family</h1>
+      <Link to="/">Back Home</Link> */}
       <MapWrapper />
     </Layout>
   )
@@ -28,11 +28,3 @@ export const Head = () => (
 )
 
 export default Soundsystems
-
-export const pageQuery = graphql`
-  query {
-    allStrapiSoundsystem {
-      totalCount
-    }
-  }
-`
