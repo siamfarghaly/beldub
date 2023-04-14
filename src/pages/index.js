@@ -21,15 +21,15 @@ const IndexPage = props => {
       </div> */}
       <div className="hero" style={{ zIndex: '-105', position: 'absolute', top: '100px', overflow: 'hidden', left: '0', backgroundPosition: '0%', height: '60vh', width: '100vw', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundColor: 'var(--color-primary)' }}>
       </div>
-      <div style={{ height: '68vh', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', marginBottom: '12vh' }}>
+      <div style={{ height: '68vh', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', marginBottom: '8vh' }}>
         <h1 style={{ fontSize: '2.5rem', textAlign: 'center', color: 'var(--color-white)', textShadow:'2px 4px 5px var(--color-black)' }}>
           The platform that brings you reports of everything <b style={{color:'var(--color-primary)'}}>dubbing in Belgium.</b>
         </h1>
         <a href="https://vimeo.com/201431711" className="actionButton" style={{ padding: '1rem', textAlign: 'center', textDecoration: 'none', cursor: 'pointer', boxShadow: "4px 6px 5px var(--color-blue)", margin: '0 auto', width: '300px', color: 'var(--color-primary)', border: '2px solid var(--color-primary)', borderRadius: '4px', backgroundColor: '#161615', height: '65px' }}>
-          <h3 style={{ marginTop: '0', marginBottom: 'var(--space-3)' }}>WATCH DOCUMENTARY</h3>
+          <h3 style={{ marginTop: '0', marginBottom: 'var(--space-3)' }}>Watch BelDUB docu (2015)</h3>
         </a>
       </div>
-      <h2 style={{ textAlign: 'left', fontSize: '2rem', color: 'var(--color-text)', marginBottom: 'var(--space-3)' }}>Latest <span style={{ color: 'var(--color-primary)' }}>updates</span></h2>
+      <h2 style={{ textAlign: 'left', fontSize: '2rem', color: 'var(--color-text)', marginBottom: 'var(--space-3)' }}>Check our latest <span style={{ color: 'var(--color-primary)' }}>Dub Reports</span></h2>
       <div className="latestPosts" style={{ display: "grid", gridTemplateColumns: "repeat( auto-fit, minmax(300px, 1fr) )", gridGap: "30px", marginTop: "30px" }}>
         {allPosts.map((blogpost, i) => (
           <div key={i} style={{ maxWidth: '600px', textAlign: 'left' }}>

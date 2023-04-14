@@ -40,7 +40,7 @@ const Blog = props => {
 
   return (
     <Layout>
-      <h1 style={{ marginBottom: 'var(--space-3)' }}>Latest <b>Videos, Articles & Interviews</b></h1>
+      <h1 style={{ marginBottom: 'var(--space-3)' }}>Check our latest <b>Dub Reports</b></h1>
       <Link to="/">Back Home</Link>
       <div className="searchBox" style={{ marginBottom: 'var(--space-3)', marginTop: 'var(--space-3)' }}>
         <label style={{ fontSize: 'var(--font-lg)', fontWeight: 'var(--font-bold)' }} htmlFor="search">🔎 Search: </label>
