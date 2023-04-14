@@ -290,3 +290,19 @@ pre tt:after {
   color: var(--color-white);
   font-size: 18px;
 }
+
+.hero-video{
+  width: 100%;
+height: 100%;
+position: absolute;
+object-fit: cover;
+}
+
+.video-container {
+  z-index: -100;
+  position: absolute;
+  top: 100px;
+  left:0;
+  height: 70vh;
+  width: 100vw;
+}
