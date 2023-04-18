@@ -12,6 +12,7 @@ const IndexPage = props => {
   const allPosts = data.allStrapiPost.nodes
   return (
     <Layout>
+      <div style={{fontSize:'22px',padding:'5px 5px 5px 5px',position:'absolute',width:'100vw', textAlign:'center',left:'0', top:'120px', color:'var(--color-black)', marginTop:'-30px',backgroundColor:'var(--color-primary'}}><b>The platform that brings you reports of everything <b style={{color:'var(--color-black)'}}>dubbing in Belgium.</b></b></div>
       <div className="hero video-container">
       <video className="hero-video" loop autoPlay muted poster="../beldubcover.jpg">
         <source src={HeroVideo} type="video/mp4" />
@@ -19,9 +20,8 @@ const IndexPage = props => {
       </div>
       {/* <div className="hero" style={{ zIndex: '-100', position: 'absolute', top: '250px', overflow: 'hidden', left: '0', backgroundPosition: '90%', height: '60vh', width: '100vw', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundImage: 'url("../beldubcover.jpg")' }}>
       </div> */}
-      <div className="hero" style={{ zIndex: '-105', position: 'absolute', top: '100px', overflow: 'hidden', left: '0', backgroundPosition: '0%', height: '60vh', width: '100vw', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundColor: 'var(--color-primary)' }}>
-      </div>
-      <div style={{ height: '68vh', display: 'flex', flexDirection: 'column', justifyContent: 'end', marginBottom: '8vh' }}>
+      
+      <div style={{ height: '70vh', display: 'flex', flexDirection: 'column', justifyContent: 'end', marginBottom: 'var(--space-6)' }}>
         {/* <h1 style={{ fontSize: '2.5rem', textAlign: 'center', color: 'var(--color-white)', textShadow:'2px 4px 5px var(--color-black)' }}>
           The platform that brings you reports of everything <b style={{color:'var(--color-primary)'}}>dubbing in Belgium.</b>
         </h1> */}
@@ -29,7 +29,7 @@ const IndexPage = props => {
           <h3 style={{ marginTop: '0', marginBottom: 'var(--space-3)' }}>Watch BelDUB docu (2015)</h3>
         </a>
       </div>
-      <h2 style={{ textAlign: 'left', fontSize: '2rem', color: 'var(--color-text)', marginBottom: 'var(--space-3)' }}>Check our latest <span style={{ color: 'var(--color-primary)' }}>Dub Reports</span></h2>
+      <h2 style={{ textAlign: 'left',lineHeight:'2rem', fontSize: '2rem', color: 'var(--color-text)', marginBottom: 'var(--space-3)' }}>Check our latest <span style={{ color: 'var(--color-primary)' }}>Dub Reports</span></h2>
       <div className="latestPosts" style={{ display: "grid", gridTemplateColumns: "repeat( auto-fit, minmax(300px, 1fr) )", gridGap: "30px", marginTop: "30px" }}>
         {allPosts.map((blogpost, i) => (
           <div key={i} style={{ maxWidth: '600px', textAlign: 'left' }}>

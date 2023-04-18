@@ -301,7 +301,7 @@ object-fit: cover;
 .video-container {
   z-index: -100;
   position: absolute;
-  top: 100px;
+  top: 110px;
   left:0;
   height: 70vh;
   width: 100vw;

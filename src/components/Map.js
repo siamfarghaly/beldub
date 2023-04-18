@@ -97,7 +97,7 @@ export default function Map() {
     return (
         <div>
             <div className="map__container custom-popup">
-                <MapContainer style={{ position: 'absolute',left:'0',top:'100px', borderRadius: '4px', width:'100vw', height: '60vh' }} center={[50.70538598041358, 4.494414422841746]} dragging={true} zoom={8} maxZoom={20}>
+                <MapContainer style={{ position: 'absolute',left:'0',top:'100px', borderRadius: '4px', width:'100vw', height: '70vh' }} center={[50.70538598041358, 4.494414422841746]} dragging={true} zoom={8} maxZoom={20}>
                     <MarkerClusterGroup chunkedLoading maxClusterRadius={30}>
                         <VectorTileLayer
                             styleUrl="https://api.maptiler.com/maps/d1978af7-1fc3-48b1-93b3-223cc990e712/style.json?key=TSXhCTpRTaXUw3cJHU0A"
@@ -118,7 +118,7 @@ export default function Map() {
                     </MarkerClusterGroup>
                 </MapContainer>
             </div>
-            <div className="searchBox" style={{zIndex:'1000',marginTop:'58vh', marginBottom:'var(--space-3)'}}>
+            <div className="searchBox" style={{zIndex:'1000',marginTop:'67.5vh', marginBottom:'var(--space-3)'}}>
                 <label style={{color:'var(--color-black)', fontSize: 'var(--font-lg)', fontWeight: 'var(--font-bold)' }} htmlFor="search">🔎 Search: </label>
                 <input
                     name="search"
