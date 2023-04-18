@@ -1,6 +1,7 @@
 import * as React from "react"
 import { graphql, Link } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import ReactMarkdown from 'react-markdown'
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -14,7 +15,8 @@ const BlogPost = ({ data }) => {
       <p margin><Link style={{display:'inline'}} to="/blog">Go back</Link> {createdAt}</p>
       {video !== null && <iframe src={video} style={{ aspectRatio: '16/9' }} width="100%" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="true"></iframe>}
       {video === null && <GatsbyImage image={getImage(cover.localFile.childImageSharp.gatsbyImageData)} alt={slug} />}
-      <p style={{ margin: 'auto' }}>{content.data.content}</p>
+      <p style={{ margin: 'auto' }}> <ReactMarkdown>{content.data.content}</ReactMarkdown></p>
+     
     </Layout>
   )
 }
