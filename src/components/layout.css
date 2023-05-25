@@ -78,7 +78,7 @@ abbr[title] {
 
 b,
 strong {
-  font-weight: inherit;
+  font-weight: 100;
 }
 
 dfn {
