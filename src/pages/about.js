@@ -1,16 +1,36 @@
 import * as React from "react"
 import { Link } from "gatsby"
-// import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+const socials = [
+  { text: "Youtube", url: "https://www.youtube.com/@beldub9678" },
+  {
+    text: "Instagram",
+    url: "https://www.instagram.com/beldub_/",
+  },
+  {
+    text: "Facebook",
+    url: "https://www.facebook.com/beldubdocu",
+  },
+  {
+    text: "Tiktok",
+    url: "https://www.tiktok.com/@beldub_",
+  },
+]
 
 const Team = () => (
   <Layout>
-    <h1 style={{ marginBottom: 'var(--space-1)' }}>BelDUB <b>Team</b></h1>
-    <Link to="/">Back Home</Link>
-    <h2 style={{ marginTop:'var(--space-5)',textAlign: "center", color: 'var(--color-primary)' }}> "BelDUB created a platform that brings you reports of everything dubbing in Belgium. It's the sequel to a documentary on Belgian soundsystem culture."</h2>
-    <div style={{ marginTop: 'var(--space-5)' }}>
+    
+    <div style={{ padding:'var(--size-gutter)',width: '100svw', position: 'absolute', top:'100px',left: '0', backgroundColor: '#222', }}>
+    <div style={{ maxWidth:'var(--size-content)', margin:'auto'}}>
+      <h1 style={{marginBottom: 'var(--space-1)', color:'var(--color-white)' }}>BelDUB <b>Team</b></h1>
+      <Link style={{maxWidth:'var(--size-content)', margin:'auto'}} to="/">Back Home</Link>
+    </div>
+    
+      <h2 style={{ margin:'var(--space-5) auto',maxWidth:'var(--size-content)', textAlign: "center", color: 'var(--color-primary)' }}> "BelDUB created a platform that brings you reports of everything dubbing in Belgium. It's the sequel to a documentary on Belgian soundsystem culture."</h2>
+
       {/* <img style={{borderRadius:'4px'}} alt="Andreas from Beldub taking an interview with King Earthquake" src="../beldub-during-interview.jpeg" /> */}
       {/* <div>
         <p>
@@ -18,9 +38,37 @@ const Team = () => (
           Team BelDUB is here for you to report on all things dubbing in Belgium, pushing the soundsystem scene  forward since 2009.
         </p>
       </div> */}
-      <div style={{  borderBottom:'2px dashed var(--color-primary)' ,display: 'grid',gridTemplateColumns: "repeat( auto-fit, minmax(300px, 1fr) )", alignItems: 'center', justifyItems:'center' }}>
-        <img style={{ borderRadius: '4px', height: '300px' }} alt="Andreas from BelDUB" src="../Andreas.png" />
-        <p>Part-time music reporter <b>Andreas Peeters</b> (°1984) has been documenting the early days of the Belgian soundsystems since 2009. After a few years of making videos with distorted audio, he met cameraman Gieljan Van Goethem. Together they created the BelDUB documentary, which was screened for the first time march 2015 and broadcasted on the channel Op Acht in the summer of 2016. In the years after the release, Andreas kept doing interviews and event reports. In 2019, he teamed up with the one-man video and photography powerhouse Doryan Rosario. Together they decided to gather a crew of reggae-minded reporters and create the very platform you’re looking at. Andreas took up the role of head editor.
+      <div style={{ margin: 'auto', maxWidth: 'var(--size-content)', color: 'white', display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0px', alignItems: 'center' }} >
+          <StaticImage layout="fixed" height={300} src="../images/Andreas.png" alt="Andreas from BelDUB" />
+          <h3 style={{ marginTop: '-20px' }} >Andreas Peeters</h3>
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0px', alignItems: 'center' }} >
+          <StaticImage layout="fixed" height={300} src="../images/Doryan.png" alt="Doryan from BelDUB" />
+          <h3 style={{ marginTop: '-20px' }} >Doryan Rosario</h3>
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0px', alignItems: 'center' }} >
+          <StaticImage layout="fixed" height={300} src="../images/Dries.png" alt="Dries from BelDUB" />
+          <h3 style={{ marginTop: '-20px' }} >Dries Talloen</h3>
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0px', alignItems: 'center' }} >
+          <StaticImage layout="fixed" height={300} src="../images/Bram.png" alt="Bram from BelDUB" />
+          <h3 style={{ marginTop: '-20px' }} >Bram Lembrechts</h3>
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0px', alignItems: 'center' }} >
+          <StaticImage layout="fixed" height={300} src="../images/Toon.png" alt="Toon from BelDUB" />
+          <h3 style={{ marginTop: '-20px' }} >Toon Geraerts</h3>
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0px', alignItems: 'center' }} >
+          <StaticImage layout="fixed" height={300} src="../images/Siam.png" alt="Siam from BelDUB" />
+          <h3 style={{ marginTop: '-20px' }} >Siam Farghaly</h3>
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0px', alignItems: 'center' }} >
+          <StaticImage layout="fixed" height={300} src="../images/Seppe.png" alt="Seppe from BelDUB" />
+          <h3 style={{ marginTop: '-20px' }} >Seppe</h3>
+        </div>
+      </div>
+      {/* <p>Part-time music reporter <b>Andreas Peeters</b> (°1984) has been documenting the early days of the Belgian soundsystems since 2009. After a few years of making videos with distorted audio, he met cameraman Gieljan Van Goethem. Together they created the BelDUB documentary, which was screened for the first time march 2015 and broadcasted on the channel Op Acht in the summer of 2016. In the years after the release, Andreas kept doing interviews and event reports. In 2019, he teamed up with the one-man video and photography powerhouse Doryan Rosario. Together they decided to gather a crew of reggae-minded reporters and create the very platform you’re looking at. Andreas took up the role of head editor.
           Andreas is also one of the founding members of <b>Tempest Soundsystem</b>, where he goes by the name of selector Roots Apostle.</p>
       </div>
       <div style={{ borderBottom:'2px dashed var(--color-primary)' ,display: 'grid',gridTemplateColumns: "repeat( auto-fit, minmax(300px, 1fr) )", alignItems: 'center', justifyItems:'center' }}>
@@ -48,10 +96,36 @@ const Team = () => (
       <div style={{  display: 'grid',gridTemplateColumns: "repeat( auto-fit, minmax(300px, 1fr) )", alignItems: 'center', justifyItems:'center' }}>
         <img style={{ borderRadius: '4px', height: '300px' }} alt="Seppe from BelDUB" src="../Seppe.png" />
         <p><b>Seppe Dumon</b> (°2005) is the Benjamin of this team. Seppe is a young and super enthusiastic cameraman with a heart beating for reggae music. As many youths from Bruges seem to do, he decided to build a soundsystem with his friends: <b>Backyard Soundsystem</b>.</p>
-      </div>
+      </div> */}
 
-
+      <footer
+        style={{
+          padding: 'var(--space-5)',
+          marginTop: `var(--space-5)`,
+          fontSize: `var(--font-sm)`,
+          textAlign: 'center',
+          width: '100svw',
+          position:'absolute',
+          left:'0',
+          backgroundColor: 'var(--color-black)'
+        }}
+      >
+        <div style={{ height: '2px', margin: 'auto', maxWidth: '400px', backgroundColor: 'var(--color-primary)' }}></div>
+        <h2 style={{ marginTop: 'var(--space-3)', color: 'var(--color-white)', marginBottom: 'var(--space-2)' }}>Find BelDUB on Social Media:</h2>
+        <div >
+          <a href={socials[0].url}><img style={{ marginRight: 'var(--space-2)', height: '40px' }} src={'/yt.png'} alt="youtube-icon" /></a>
+          <a href={socials[1].url}><img style={{ marginRight: 'var(--space-2)', height: '40px' }} src={'/insta.png'} alt="insta-icon" /></a>
+          <a href={socials[2].url}><img style={{ marginRight: 'var(--space-2)', height: '40px' }} src={'/fb.png'} alt="fb-icon" /></a>
+          <a href={socials[3].url}><img style={{ marginRight: 'var(--space-2)', height: '40px' }} src={'/tiktok.png'} alt="tiktok-icon" /></a>
+        </div>
+        <div style={{ color: 'var(--color-white)' }}>
+          Beldub © {new Date().getFullYear()} &middot; Site by
+          {` `}
+          <a href="https://www.siamfarghaly.com/">Siam</a>
+        </div>
+      </footer>
     </div>
+
   </Layout>
 )
 
