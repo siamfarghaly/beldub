@@ -118,7 +118,6 @@ export default function Map() {
                     </MarkerClusterGroup>
                 </MapContainer>
             </div>
-            <p>{soundsLength}</p>
             <div className="searchBox" style={{zIndex:'1000',marginTop:'67.5vh', marginBottom:'var(--space-3)'}}>
                 <label style={{color:'var(--color-black)', fontSize: 'var(--font-lg)', fontWeight: 'var(--font-bold)' }} htmlFor="search">🔎 Search: </label>
                 <input
@@ -131,6 +130,7 @@ export default function Map() {
                     onChange={handleInputChange}
                 />
             </div>
+            <h2>{soundsLength} Soundsystems</h2>
             <div className="soundBox" style={{
                 display: "grid",
                 gridTemplateColumns: "repeat( auto-fit, minmax(215px, 1fr) )",
