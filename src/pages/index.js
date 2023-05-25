@@ -5,6 +5,7 @@ import Seo from "../components/seo"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import "../components/index.module.css"
 import HeroVideo from "../assets/hero-video.mp4"
+import HeroWebm from "../assets/hero-webm.webm"
 
 
 const IndexPage = props => {
@@ -14,8 +15,9 @@ const IndexPage = props => {
     <Layout>
       <div style={{fontSize:'22px',padding:'5px 5px 5px 5px',position:'absolute',width:'100vw', textAlign:'center',left:'0', top:'120px', color:'var(--color-black)', marginTop:'-30px',backgroundColor:'var(--color-primary'}}><b>The platform that brings you reports of everything <b style={{color:'var(--color-black)'}}>dubbing in Belgium.</b></b></div>
       <div className="hero video-container">
-      <video className="hero-video" loop autoPlay muted poster="../beldubcover.jpg">
+      <video className="hero-video" loop autoPlay muted poster="../beldub-docu-still.jpg">
         <source src={HeroVideo} type="video/mp4" />
+        <source src={HeroWebm} type="video/webm" />
       </video>
       </div>
       {/* <div className="hero" style={{ zIndex: '-100', position: 'absolute', top: '250px', overflow: 'hidden', left: '0', backgroundPosition: '90%', height: '60vh', width: '100vw', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', backgroundImage: 'url("../beldubcover.jpg")' }}>
