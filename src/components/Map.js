@@ -151,7 +151,6 @@ export default function Map() {
                                 <Link to={sound.slug} style={{ color: 'inherit', textDecoration: "inherit" }}>
                                     <div style={{ height: '70px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                                         <h2 className="soundName" style={{ color: 'var(--color-primary)', fontWeight: 'var(--font-heavy)', lineHeight: '1.8rem', margin: '0', textAlign: 'center', padding: 'var(--space-4)' }}> <b>{sound.name}</b> </h2>
-
                                     </div>
                                     <GatsbyImage image={getImage(sound.img.localFile.childImageSharp.gatsbyImageData)} alt={sound.slug} style={{ marginTop: '0', borderRadius: '4px', height: '250px' }} />
                                 </Link>

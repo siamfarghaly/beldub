@@ -18,7 +18,7 @@ const Team = () => (
           Team BelDUB is here for you to report on all things dubbing in Belgium, pushing the soundsystem scene  forward since 2009.
         </p>
       </div> */}
-      <div style={{  borderBottom:'2px dashed var(--color-primary)' ,display: 'grid',gridTemplateColumns: "repeat( auto-fit, minmax(400px, 1fr) )", alignItems: 'center', justifyItems:'center' }}>
+      <div style={{  borderBottom:'2px dashed var(--color-primary)' ,display: 'grid',gridTemplateColumns: "repeat( auto-fit, minmax(300px, 1fr) )", alignItems: 'center', justifyItems:'center' }}>
         <img style={{ borderRadius: '4px', height: '300px' }} alt="Andreas from BelDUB" src="../Andreas.png" />
         <p>Part-time music reporter <b>Andreas Peeters</b> (°1984) has been documenting the early days of the Belgian soundsystems since 2009. After a few years of making videos with distorted audio, he met cameraman Gieljan Van Goethem. Together they created the BelDUB documentary, which was screened for the first time march 2015 and broadcasted on the channel Op Acht in the summer of 2016. In the years after the release, Andreas kept doing interviews and event reports. In 2019, he teamed up with the one-man video and photography powerhouse Doryan Rosario. Together they decided to gather a crew of reggae-minded reporters and create the very platform you’re looking at. Andreas took up the role of head editor.
           Andreas is also one of the founding members of <b>Tempest Soundsystem</b>, where he goes by the name of selector Roots Apostle.</p>
