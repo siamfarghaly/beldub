@@ -6,7 +6,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 
 
-const Blog = props => {
+const Reports = props => {
 
   const { data } = props
   const allPosts = data.allStrapiPost.nodes
@@ -76,13 +76,13 @@ const Blog = props => {
 
 
 export const Head = () => (
-  <Seo title="Blog">
+  <Seo title="Dub Reports">
     <meta property="og:image" content="../blog-cover.jpg" />
     <meta name="image" content="../blog-cover.jpg" />
   </Seo>
 )
 
-export default Blog
+export default Reports
 
 export const pageQuery = graphql`
 query BlogQuery {

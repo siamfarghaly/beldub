@@ -35,14 +35,14 @@ const Header = ({ siteTitle }) => (
         <li>
           <Link
             className="menuLink"
-            to="/blog"
+            to="/dub-reports"
             style={{
               fontSize: `var(--font-lg)`,
               textDecoration: `none`,
               fontWeight: 'var(--font-bold)',
             }}
           >
-            Blog
+            Dub Reports
           </Link>
         </li>
         <li><Link

@@ -130,7 +130,7 @@ export default function Map() {
                     onChange={handleInputChange}
                 />
             </div>
-            <h2 style={{maxWidth:'250px', marginBottom:'var(--space-3)', textAlign:'center',borderRadius:'4px',backgroundColor:'var(--color-primary)'}}>{soundsLength} Soundsystems</h2>
+            <h3 style={{ marginBottom:'var(--space-3)', textAlign:'center',borderRadius:'4px',backgroundColor:'var(--color-primary)'}}>{soundsLength} Soundsystems</h3>
             <div className="soundBox" style={{
                 display: "grid",
                 gridTemplateColumns: "repeat( auto-fit, minmax(215px, 1fr) )",
