@@ -65,7 +65,7 @@ const Team = () => (
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0px', alignItems: 'center' }} >
           <StaticImage layout="fixed" height={300} src="../images/Seppe.png" alt="Seppe from BelDUB" />
-          <h3 style={{ marginTop: '-20px' }} >Seppe</h3>
+          <h3 style={{ marginTop: '-20px' }} >Seppe Dumon</h3>
         </div>
       </div>
       {/* <p>Part-time music reporter <b>Andreas Peeters</b> (°1984) has been documenting the early days of the Belgian soundsystems since 2009. After a few years of making videos with distorted audio, he met cameraman Gieljan Van Goethem. Together they created the BelDUB documentary, which was screened for the first time march 2015 and broadcasted on the channel Op Acht in the summer of 2016. In the years after the release, Andreas kept doing interviews and event reports. In 2019, he teamed up with the one-man video and photography powerhouse Doryan Rosario. Together they decided to gather a crew of reggae-minded reporters and create the very platform you’re looking at. Andreas took up the role of head editor.
