@@ -311,6 +311,7 @@ object-fit: cover;
 .collapsible {
   cursor: pointer;
   border-radius: 4px;
+  transition: all 0.2s ease-out;
 }
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
@@ -321,8 +322,7 @@ object-fit: cover;
 /* Style the collapsible content. Note: hidden by default */
 .content {
   max-height: 0;
-  transition: max-height 0.2s ease-out;
-
+  transition: all 0.2s ease-out;
   max-width: 300px;
   border-radius: 4px;
   z-index: 100;

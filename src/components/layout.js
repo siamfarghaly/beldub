@@ -49,7 +49,7 @@ const Layout = ({ children }) => {
           zIndex: '1',
         }}
       >
-        <main>{children}</main>
+        <main style={{minHeight:'90svh'}}>{children}</main>
       </div>
       <footer
         style={{
