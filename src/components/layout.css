@@ -317,10 +317,12 @@ object-fit: cover;
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 .active, .collapsible:hover {
   background-color: var(--color-primary);
+  color:var(--color-black);
 }
 
 /* Style the collapsible content. Note: hidden by default */
 .content {
+  color:var(--color-black);
   max-height: 0;
   transition: all 0.2s ease-out;
   max-width: 300px;
@@ -329,4 +331,8 @@ object-fit: cover;
   padding: 0 18px;
   overflow: hidden;
   background-color: var(--color-primary);
+}
+
+.content a{
+  color:var(--color-white);
 }

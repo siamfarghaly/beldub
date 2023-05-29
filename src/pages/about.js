@@ -33,12 +33,13 @@ function handleClick(event) {
 
 const Team = () => (
   <Layout>
-    <div style={{ padding: 'var(--size-gutter)', width: '100svw', position: 'absolute', top: '100px', left: '0', backgroundColor: '#222', }}>
-      <div style={{ maxWidth: 'var(--size-content)', margin: 'auto' }}>
-        <h1 style={{ marginBottom: 'var(--space-1)', color: 'var(--color-white)' }}>BelDUB <b>Team</b></h1>
-        <Link style={{ maxWidth: 'var(--size-content)', margin: 'auto' }} to="/">Back Home</Link>
+    <div style={{ width: '100svw', position: 'absolute', top: '90px', left: '0', backgroundColor: '#222', }}>
+      <div style={{ maxWidth: 'var(--size-content)',padding: 'var(--size-gutter)' , margin: 'auto' }}>
+        <h1 style={{ margin: 'var(--space-2) 0 var(--space-1) 0', color: 'var(--color-white)' }}>BelDUB <b>Team</b></h1>
+        <Link to="/">Back Home</Link>
+        <h2 style={{ margin: 'var(--space-5) auto', textAlign: "center", color: 'var(--color-primary)' }}> "BelDUB created a platform that brings you reports of everything dubbing in Belgium. It's the sequel to a documentary on Belgian soundsystem culture."</h2>
       </div>
-      <h2 style={{ margin: 'var(--space-5) auto', maxWidth: 'var(--size-content)', textAlign: "center", color: 'var(--color-primary)' }}> "BelDUB created a platform that brings you reports of everything dubbing in Belgium. It's the sequel to a documentary on Belgian soundsystem culture."</h2>
+      
       {/* <img style={{borderRadius:'4px'}} alt="Andreas from Beldub taking an interview with King Earthquake" src="../beldub-during-interview.jpeg" /> */}
       {/* <div>
         <p>
@@ -46,12 +47,12 @@ const Team = () => (
           Team BelDUB is here for you to report on all things dubbing in Belgium, pushing the soundsystem scene  forward since 2009.
         </p>
       </div> */}
-      <div style={{ margin: 'auto', maxWidth: 'var(--size-content)', color: 'white', display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
+      <div style={{ margin: 'auto',marginBottom:'var(--space-5)', maxWidth: 'var(--size-content)', color: 'white', display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
         <div onClick={handleClick} className="collapsible" style={{ display: 'flex', flexDirection: 'column', gap: '0px', alignItems: 'center' }} >
           <StaticImage layout="fixed" height={300} src="../images/Andreas.png" alt="Andreas from BelDUB" />
           <h3 style={{ marginTop: '-20px' }} >Andreas Peeters</h3>
           <div className="content">
-            <p>Part-time music reporter <b>Andreas Peeters</b> (°1984) has been documenting the early days of the Belgian soundsystems since 2009. After a few years of making videos with distorted audio, he met cameraman Gieljan Van Goethem. Together they created the BelDUB documentary, which was screened for the first time march 2015 and broadcasted on the channel Op Acht in the summer of 2016. In the years after the release, Andreas kept doing interviews and event reports. In 2019, he teamed up with the one-man video and photography powerhouse Doryan Rosario. Together they decided to gather a crew of reggae-minded reporters and create the very platform you’re looking at. Andreas took up the role of head editor.
+            <p>Part-time music reporter <b>Andreas Peeters</b> (°1984) has been documenting the early days of the Belgian soundsystems since 2009. After a few years of making videos with distorted audio, he met cameraman Gieljan Van Goethem. Together they created <a href="https://youtu.be/_iq2Yt_KXFg">the BelDUB documentary</a>, which was screened for the first time march 2015 and broadcasted on the channel Op Acht in the summer of 2016. In the years after the release, Andreas kept doing interviews and event reports. In 2019, he teamed up with the one-man video and photography powerhouse Doryan Rosario. Together they decided to gather a crew of reggae-minded reporters and create the very platform you’re looking at. Andreas took up the role of head editor.
               Andreas is also one of the founding members of <b>Tempest Soundsystem</b>, where he goes by the name of selector Roots Apostle.</p>
           </div>
         </div>
@@ -134,7 +135,6 @@ const Team = () => (
       <footer
         style={{
           padding: 'var(--space-5)',
-          marginTop: `var(--space-5)`,
           fontSize: `var(--font-sm)`,
           textAlign: 'center',
           width: '100svw',
