@@ -154,7 +154,7 @@ const Team = () => (
         <div style={{ color: 'var(--color-white)' }}>
           Beldub © {new Date().getFullYear()} &middot; Site by
           {` `}
-          <a href="https://www.siamfarghaly.com/">Siam</a>
+          <a style={{textDecoration:'none',color:'var(--color-white)'}} href="https://www.siamfarghaly.com/">Siam</a>
         </div>
       </footer>
     </div>
