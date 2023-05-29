@@ -12,7 +12,7 @@ const BlogPost = ({ data }) => {
     <Layout>
       <h1 style={{ marginBottom: 'var(--space-1)' }}>{title}</h1>
       
-      <p margin><Link style={{display:'inline'}} to="/blog">Go back</Link> {createdAt}</p>
+      <p margin><Link style={{display:'inline'}} to="/dub-reports">Go back</Link> {createdAt}</p>
       {video !== null && <iframe src={video} style={{ aspectRatio: '16/9' }} width="100%" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="true"></iframe>}
       {video === null && <GatsbyImage image={getImage(cover.localFile.childImageSharp.gatsbyImageData)} alt={slug} />}
       <p style={{ margin: 'auto' }}> <ReactMarkdown>{content.data.content}</ReactMarkdown></p>
