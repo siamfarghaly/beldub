@@ -58,8 +58,8 @@ const IndexPage = props => {
 
 export const Head = () => (
   <Seo title="Home">
-    <meta property="og:image" content="../beldubcover.jpg" />
-    <meta name="image" content="../beldubcover.jpg" />
+    <meta property="og:image" content="../beldub-docu-still.jpg" />
+    <meta name="image" content="../beldub-docu-still.jpg" />
   </Seo>
 )
 
