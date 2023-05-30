@@ -17,7 +17,6 @@ const Reports = props => {
   })
 
   const handleInputChange = event => {
-    console.log(event.target.value)
     const query = event.target.value
     const { data } = props
     const posts = data.allStrapiPost.nodes || []
