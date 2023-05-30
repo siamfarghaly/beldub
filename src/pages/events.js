@@ -16,7 +16,6 @@ const Events = props => {
   })
 
   const handleInputChange = event => {
-    console.log(event.target.value);
     const query = event.target.value;
     const { data } = props;
     let json = JSON.parse(data.allStrapiEventcalendar.nodes[0].content);
