@@ -15,7 +15,7 @@ const BlogPost = ({ data }) => {
       <p margin><Link style={{display:'inline'}} to="/dub-reports">Go back</Link> {createdAt}</p>
       {video !== null && <iframe src={video} style={{ aspectRatio: '16/9' }} width="100%" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="true"></iframe>}
       {video === null && <GatsbyImage image={getImage(cover.localFile.childImageSharp.gatsbyImageData)} alt={slug} />}
-      <p style={{ margin: 'auto'; margin-top: '24px'; }}> <ReactMarkdown>{content.data.content}</ReactMarkdown></p>
+      <p style={{ margin: 'auto', margin-top: '24px'; }}> <ReactMarkdown>{content.data.content}</ReactMarkdown></p>
      
     </Layout>
   )
