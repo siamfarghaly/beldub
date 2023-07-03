@@ -95,13 +95,6 @@ query BlogQuery {
           content
         }
       }
-      other {
-        localFile {
-          childImageSharp {
-            gatsbyImageData
-          }
-        }
-      }
       cover {
         localFile {
           childImageSharp {
