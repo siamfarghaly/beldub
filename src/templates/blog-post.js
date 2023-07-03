@@ -32,13 +32,6 @@ export const query = graphql`
             content
             }
         }
-        other {
-            localFile {
-            childImageSharp {
-                gatsbyImageData
-            }
-            }
-        }
         cover {
           localFile {
             childImageSharp {
