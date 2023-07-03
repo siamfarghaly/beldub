@@ -4,6 +4,7 @@ h2 {
 }
 h6{
   margin-bottom: var(--space-1);
+  margin-top: var(--space-1);
 }
 html,
 body {
