@@ -70,7 +70,7 @@ const Events = props => {
       }}>
         {
           dubEvents.reverse().map((dubEvent, index) => {
-            if (formatDate(dubEvent.DTSTART) >= new Date()) {
+            if (formatDate(dubEvent.DTSTART).getTime() > new Date().getTime() - 28800000 ) {
               if (formatDate(dubEvent.DTSTART).getTime() < new Date().getTime() + 518400000) {
                 return (
                   <div className="eventCard" key={index} style={{
