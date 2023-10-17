@@ -22,12 +22,12 @@ function Seo({ description, title, children }) {
 
   return (
     <>
-      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-EFRMKX44HB">
-      <Script >{`window.dataLayer = window.dataLayer || [];
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-EFRMKX44HB">
+      <Script id="first-unique-id" dangerouslySetInnerHTML={{ __html: `window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-EFRMKX44HB');`}</Script>
+  gtag('config', 'G-EFRMKX44HB');` }} />
       <title>{defaultTitle ? `${title} | ${defaultTitle}` : title}</title>
       <meta name="description" content={metaDescription} />
       <meta property="og:title" content={title} />
