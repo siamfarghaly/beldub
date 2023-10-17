@@ -21,14 +21,6 @@ function Seo({ description, title, children }) {
 
   return (
     <>
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-EFRMKX44HB"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-      
-        gtag('config', 'G-EFRMKX44HB');
-      </script>
       <title>{defaultTitle ? `${title} | ${defaultTitle}` : title}</title>
       <meta name="description" content={metaDescription} />
       <meta property="og:title" content={title} />
