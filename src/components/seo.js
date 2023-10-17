@@ -1,6 +1,5 @@
 import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { Script } from "gatsby"
 
 function Seo({ description, title, children }) {
   const { site } = useStaticQuery(
@@ -22,12 +21,6 @@ function Seo({ description, title, children }) {
 
   return (
     <>
-      <Script src="https://www.googletagmanager.com/gtag/js?id=G-EFRMKX44HB">
-      <Script id="first-unique-id" dangerouslySetInnerHTML={{ __html: `window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-EFRMKX44HB');` }} />
       <title>{defaultTitle ? `${title} | ${defaultTitle}` : title}</title>
       <meta name="description" content={metaDescription} />
       <meta property="og:title" content={title} />
