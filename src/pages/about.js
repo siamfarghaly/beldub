@@ -164,14 +164,6 @@ const Team = () => (
 
 export const Head = () => (
   <Seo title="BelDUB Team">
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EFRMKX44HB"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'G-EFRMKX44HB');
-    </script>
     <meta property="og:image" content="../beldub-during-interview.jpeg" />
     <meta name="image" content="../beldub-during-interview.jpeg" />
   </Seo>
