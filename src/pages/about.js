@@ -163,10 +163,20 @@ const Team = () => (
 )
 
 export const Head = () => (
-  <Seo title="BelDUB Team">
-    <meta property="og:image" content="../beldub-during-interview.jpeg" />
-    <meta name="image" content="../beldub-during-interview.jpeg" />
-  </Seo>
+  <>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EFRMKX44HB"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-EFRMKX44HB');
+    </script>
+    <Seo title="BelDUB Team">
+      <meta property="og:image" content="../beldub-during-interview.jpeg" />
+      <meta name="image" content="../beldub-during-interview.jpeg" />
+    </Seo>
+  </>
 )
 
 export default Team
