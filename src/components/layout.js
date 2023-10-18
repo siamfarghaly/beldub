@@ -70,9 +70,7 @@ const Layout = ({ children }) => {
           <a href={socials[3].url}><img style={{ marginRight: 'var(--space-2)', height: '40px' }} src={'/tiktok.png'} alt="tiktok-icon" /></a>
         </div>
         <div style={{ color: 'var(--color-white)' }}>
-          Beldub © {new Date().getFullYear()} &middot; Site by
-          {` `}
-          <a style={{textDecoration:'none',color:'var(--color-white)'}} href="https://www.siamfarghaly.com/">Siam</a>
+          Beldub © {new Date().getFullYear()} &middot;
         </div>
       </footer>
     </>
