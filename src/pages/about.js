@@ -4,6 +4,7 @@ import { StaticImage } from "gatsby-plugin-image"
 import "../components/about.module.css"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import { Script } from "gatsby"
 const socials = [
   { text: "Youtube", url: "https://www.youtube.com/@beldub9678" },
   {
@@ -33,6 +34,15 @@ function handleClick(event) {
 
 const Team = () => (
   <Layout>
+    <Script src="https://www.googletagmanager.com/gtag/js?id=G-EFRMKX44HB" />
+    <Script id="gtagScript">
+      {`
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-EFRMKX44HB');
+      `}
+    </Script>
     <div style={{ width: '100svw', position: 'absolute', top: '90px', left: '0', backgroundColor: '#222', }}>
       <div style={{ maxWidth: 'var(--size-content)',padding: 'var(--size-gutter)' , margin: 'auto' }}>
         <h1 style={{ margin: 'var(--space-2) 0 var(--space-1) 0', color: 'var(--color-white)' }}>BelDUB <b>Team</b></h1>
