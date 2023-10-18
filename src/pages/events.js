@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { Link, graphql } from "gatsby"
+import { Link, graphql, Script } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
@@ -51,6 +51,15 @@ const Events = props => {
 
   return (
     <Layout>
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-EFRMKX44HB" />
+      <Script id="gtagScript">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-EFRMKX44HB');
+        `}
+      </Script>
       <h1 style={{ marginBottom: 'var(--space-1)' }}>Upcoming Dub & Soundsystem <b>Events in Belgium</b></h1>
       <Link to="/">Back Home</Link>
       <div className="searchBox" style={{ marginBottom: 'var(--space-3)', marginTop: 'var(--space-3)' }}>
