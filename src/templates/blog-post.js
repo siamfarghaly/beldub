@@ -1,5 +1,5 @@
 import * as React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql, Link, Script } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import ReactMarkdown from 'react-markdown'
 
@@ -10,6 +10,15 @@ const BlogPost = ({ data }) => {
   const { title, slug, cover, content, video, createdAt } = data.strapiPost
   return (
     <Layout>
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-EFRMKX44HB" />
+      <Script id="gtagScript">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-EFRMKX44HB');
+        `}
+      </Script>
       <h1 style={{ marginBottom: 'var(--space-1)' }}>{title}</h1>
       
       <p margin><Link style={{display:'inline'}} to="/dub-reports">Go back</Link> {createdAt}</p>
