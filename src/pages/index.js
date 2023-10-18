@@ -1,5 +1,5 @@
 import * as React from "react"
-import { Link, graphql } from "gatsby"
+import { Link, graphql, Script } from "gatsby"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
@@ -13,6 +13,15 @@ const IndexPage = props => {
   const allPosts = data.allStrapiPost.nodes
   return (
     <Layout>
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-EFRMKX44HB" />
+      <Script id="gtagScript">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-EFRMKX44HB');
+        `}
+      </Script>
       <div style={{fontSize:'22px',padding:'5px 5px 5px 5px',position:'absolute',width:'100vw', textAlign:'center',left:'0', top:'120px', color:'var(--color-black)', marginTop:'-30px',backgroundColor:'var(--color-primary'}}><b>The platform that brings you reports of everything <b style={{color:'var(--color-black)'}}>dubbing in Belgium.</b></b></div>
       <div className="hero video-container">
       <video className="hero-video" loop autoPlay muted poster="../beldub-docu-still.jpg">
