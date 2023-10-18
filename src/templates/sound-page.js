@@ -1,5 +1,5 @@
 import * as React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql, Link, Script } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -38,6 +38,15 @@ const SoundPage = ({ data }) => {
   };
   return (
     <Layout>
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-EFRMKX44HB" />
+      <Script id="gtagScript">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-EFRMKX44HB');
+        `}
+      </Script>
       <Link style={{ marginBottom: 'var(--space-1)' }} to="/soundsystems">Go back</Link>
       <div style={{ boxShadow: "4px 6px 5px var(--color-blue)", color: 'var(--color-primary)', backgroundColor: 'var(--color-text)', borderRadius: '4px', padding: 'var(--space-4)', display: "grid", gridTemplateColumns: "repeat( auto-fit, minmax(250px, 1fr) )", gridGap: "30px", marginTop: "30px" }}>
         <div>
