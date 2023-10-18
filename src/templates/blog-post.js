@@ -24,7 +24,7 @@ const BlogPost = ({ data }) => {
       <p margin><Link style={{display:'inline'}} to="/dub-reports">Go back</Link> {createdAt}</p>
       {video !== null && !String(video).includes("talawa.fr") && <iframe src={video} style={{ aspectRatio: '16/9' }} width="100%" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="true"></iframe>}
       {video === null && <GatsbyImage image={getImage(cover.localFile.childImageSharp.gatsbyImageData)} alt={slug} />}
-      {String(video).includes("talawa.fr") && <iframe src={video} width="100%"></iframe>}
+      {String(video).includes("talawa.fr") && <iframe src={video} width="450px" style={{margin: 'auto'}} frameborder="0"></iframe>}
       <p style={{ margin: 'var(--space-4) auto' }}> <ReactMarkdown>{content.data.content}</ReactMarkdown></p>
      
     </Layout>
