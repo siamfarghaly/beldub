@@ -74,7 +74,7 @@ const Reports = props => {
               <GatsbyImage style={{ borderRadius: '4px' }} image={getImage(blogpost.cover.localFile.childImageSharp.gatsbyImageData)} alt={blogpost.slug} />
               <p style={{ fontSize: 'var(--font-sm)', marginTop: 'var(--space-1)', marginBottom: '0' }}>{blogpost.publishedAt}</p>
               <h2 style={{ lineHeight: 'var(--line-height-dense)', color: 'var(--color-primary)', marginTop: 'var(--space-1)', marginBottom: 'var(--space-2)', textAlign: 'left' }}><b>{blogpost.title}</b></h2>
-              <p style={{ fontWeight: "var(--font-medium)" }}>{blogpost.content.data.content.slice(0, 250).replace(/#|_|*/g, "")}<span style={{ textDecoration: 'none', color: 'var(--color-primary)' }}> ...more</span></p>
+              <p style={{ fontWeight: "var(--font-medium)" }}>{blogpost.content.data.content.slice(0, 250).replace(/#|_/g, "")}<span style={{ textDecoration: 'none', color: 'var(--color-primary)' }}> ...more</span></p>
             </Link>
           </div>
         ))} </div>
