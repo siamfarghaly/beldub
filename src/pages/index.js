@@ -48,7 +48,7 @@ const IndexPage = props => {
               <GatsbyImage style={{ borderRadius: '4px' }} image={getImage(blogpost.cover.localFile.childImageSharp.gatsbyImageData)} alt={blogpost.slug} />
               <p style={{ fontSize: 'var(--font-sm)', marginTop: 'var(--space-1)', marginBottom: '0' }}>{blogpost.publishedAt}</p>
               <h2 style={{ lineHeight: 'var(--line-height-dense)', color: 'var(--color-primary)', marginTop: 'var(--space-1)', marginBottom: 'var(--space-2)', textAlign: 'left' }}><b>{blogpost.title}</b></h2>
-              <p style={{ fontWeight: "var(--font-medium)" }}>{blogpost.content.data.content.slice(0, 250)}
+              <p style={{ fontWeight: "var(--font-medium)" }}>{blogpost.content.data.content.slice(0, 250).replace(/#|_/g, "")}
                 {blogpost.video !== null && <span style={{ color: 'var(--color-primary)' }}> ...Watch video</span>}
                 {blogpost.video === null && <span style={{ color: 'var(--color-primary)' }}> ...Read more</span>}
               </p>
