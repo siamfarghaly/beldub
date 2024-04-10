@@ -98,13 +98,6 @@ const Team = () => (
           </div>
         </div>
         <div onClick={handleClick} className="collapsible" style={{ display: 'flex', flexDirection: 'column', gap: '0px', alignItems: 'center' }} >
-          <StaticImage layout="fixed" height={300} src="../images/Siam.png" alt="Siam from BelDUB" />
-          <h3 style={{ marginTop: '-20px' }} >Siam Farghaly</h3>
-          <div className="content">
-            <p><b>Siam Farghaly</b> (°1998) from Geel is one of the founding members of the well know <b>Waga Waga Soundsystem</b>. He put his shoulders to the wheel to make the yearly Wadada Festival a succes. Siam deserves all credit for the BelDUB website: it was his graduation project. Siam is our site manager and a stand up guy, who’s not afraid to roll up his sleeves when reggae duty calls.</p>
-          </div>
-        </div>
-        <div onClick={handleClick} className="collapsible" style={{ display: 'flex', flexDirection: 'column', gap: '0px', alignItems: 'center' }} >
           <StaticImage layout="fixed" height={300} src="../images/Seppe.png" alt="Seppe from BelDUB" />
           <h3 style={{ marginTop: '-20px' }} >Seppe Dumon</h3>
           <div className="content">
@@ -133,10 +126,6 @@ const Team = () => (
         <p><b>Toon Geraerts</b> (° 1998) is a soundsystem addict from Leuven. His passion for dub music led him to the decison to start his own sound, <b>Damballa Soundsystem</b>.
           Toon has been making audio recordings of soundsystems sessions for years, which he consequently uploads on the well known content platform talawa.fr. Toon is our audio guy, a man of few words who prefers to listen rather than talk.</p>
       </div>
-      <div style={{  borderBottom:'2px dashed var(--color-primary)' ,display: 'grid',gridTemplateColumns: "repeat( auto-fit, minmax(300px, 1fr) )", alignItems: 'center', justifyItems:'center' }}>
-      <img style={{ borderRadius: '4px', height: '300px' }} alt="Siam from BelDUB" src="../Siam.png" />
-        <p><b>Siam Farghaly</b> (°1998) from Geel is one of the founding members of the well know <b>Waga Waga Soundsystem</b>. He put his shoulders to the wheel to make the yearly Wadada Festival a succes. Siam deserves all credit for the BelDUB website: it was his graduation project. Siam is our site manager and a stand up guy, who’s not afraid to roll up his sleeves when reggae duty calls.</p>
-      </div>
       <div style={{  display: 'grid',gridTemplateColumns: "repeat( auto-fit, minmax(300px, 1fr) )", alignItems: 'center', justifyItems:'center' }}>
         <img style={{ borderRadius: '4px', height: '300px' }} alt="Seppe from BelDUB" src="../Seppe.png" />
         <p><b>Seppe Dumon</b> (°2005) is the Benjamin of this team. Seppe is a young and super enthusiastic cameraman with a heart beating for reggae music. As many youths from Bruges seem to do, he decided to build a soundsystem with his friends: <b>Backyard Soundsystem</b>.</p>
@@ -162,9 +151,7 @@ const Team = () => (
           <a href={socials[3].url}><img style={{ marginRight: 'var(--space-2)', height: '40px' }} src={'/tiktok.png'} alt="tiktok-icon" /></a>
         </div>
         <div style={{ color: 'var(--color-white)' }}>
-          Beldub © {new Date().getFullYear()} &middot; Site by
-          {` `}
-          <a style={{textDecoration:'none',color:'var(--color-white)'}} href="https://www.siamfarghaly.com/">Siam</a>
+          Beldub © {new Date().getFullYear()}
         </div>
       </footer>
     </div>
